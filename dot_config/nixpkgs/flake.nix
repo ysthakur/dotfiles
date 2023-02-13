@@ -36,8 +36,6 @@
               pkgs.gh
               # Prettier ls alternative
               pkgs.exa
-              # Like Powershell but for Linux
-              pkgs.nushell
               pkgs.ruby_3_1
               # Build system for OCaml
               #pkgs.dune_2
