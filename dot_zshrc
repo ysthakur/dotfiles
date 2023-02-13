@@ -31,8 +31,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 # User configuration
 
 ## Begin zinit stuff
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/pip/pip.plugin.zsh
+zinit wait lucid for \
+        OMZL::git.zsh \
+  atload"unalias grv" \
+        OMZP::git
 
 zinit wait lucid depth=1 for \
   atinit"zicompinit; zicdreplay" \
