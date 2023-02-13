@@ -42,6 +42,11 @@ zinit wait lucid depth=1 for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”; zstyle ":completion:*" menu select'
+zinit light trapd00r/LS_COLORS
+
 # Ice modifiers other than depth are not recommended!
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
