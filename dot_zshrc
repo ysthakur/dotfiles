@@ -36,7 +36,7 @@ zinit snippet OMZ::plugins/pip/pip.plugin.zsh
 
 zinit wait lucid depth=1 for \
   atinit"zicompinit; zicdreplay" \
-      zsh-users/zsh-syntax-highlighting \
+      zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
@@ -51,6 +51,12 @@ zinit light trapd00r/LS_COLORS
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 ## End zinit stuff
+
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+# Persist history
+setopt appendhistory
 
 # Don't remember lines starting with a space
 setopt HIST_IGNORE_SPACE
@@ -76,6 +82,8 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 # Colored output
 alias ls="ls --color=auto --classify"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
