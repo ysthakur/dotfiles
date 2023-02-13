@@ -36,6 +36,8 @@
               pkgs.gh
               # Prettier ls alternative
               pkgs.exa
+              # Show disk usage visually
+              pkgs.ncdu
               pkgs.ruby_3_1
               # Build system for OCaml
               #pkgs.dune_2
