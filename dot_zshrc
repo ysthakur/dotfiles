@@ -58,6 +58,10 @@ SAVEHIST=5000
 # Persist history
 setopt appendhistory
 
+# Enable Ctrl-Left and Ctrl-Right
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # Don't remember lines starting with a space
 setopt HIST_IGNORE_SPACE
 # Ask to correct command if typoed
