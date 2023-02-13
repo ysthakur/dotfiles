@@ -25,12 +25,18 @@ HYPHEN_INSENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
+# Zinit installation
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 # User configuration
 
-source ~/antigen.zsh
-antigen init ~/.antigenrc
-
+# Don't remember lines starting with a space
 setopt HIST_IGNORE_SPACE
+# Ask to correct command if typoed
+setopt correct
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -44,6 +50,10 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
+
+export LESS="--no-init --quit-if-one-screen -R"
+
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -60,9 +70,6 @@ export NVM_DIR="$HOME/.nvm"
 # Nix home manager
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
-export PATH="$PATH:/home/ysthakur/.local/bin"
-export PATH="$PATH:/home/ysthakur/bin"
-
 # Python virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
@@ -71,10 +78,3 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export LESS="--no-init --quit-if-one-screen -R"
-
-# For managing dotfiles
-alias config="git --git-dir=$HOME/.myconf --work-tree=$HOME"
-
-# Ask to correct command if typoed
-setopt correct
