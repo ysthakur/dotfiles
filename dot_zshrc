@@ -88,6 +88,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 # Colored output
 alias ls="ls --color=auto --classify"
+alias exa="exa --classify --icons"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
