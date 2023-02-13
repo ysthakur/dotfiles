@@ -30,11 +30,15 @@
             programs.home-manager.enable = true;
 
             home.packages = [
+              # For managing dotfiles
               pkgs.chezmoi
+              # GitHub CLI
+              pkgs.gh
+              # Prettier ls alternative
+              pkgs.exa
               # Like Powershell but for Linux
               pkgs.nushell
               pkgs.ruby_3_1
-              pkgs.graalvm17-ce
               # Build system for OCaml
               #pkgs.dune_2
             ] ++ (with ocamlPackages; [
