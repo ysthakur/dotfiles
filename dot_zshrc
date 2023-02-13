@@ -69,6 +69,9 @@ export LESS="--no-init --quit-if-one-screen -R"
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
+# Colored output
+alias ls="ls --color=auto --classify"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
