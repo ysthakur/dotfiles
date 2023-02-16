@@ -1,11 +1,11 @@
 Host github.com
     User git
     HostName github.com
-    IdentityFile ~/.ssh/id_ed25519_ysthakur
+    IdentityFile ~/.ssh/id_ed25519
 
 Host github_cgccuser
     HostName github.com
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/id_ed25519_cgccuser
 
 Host gitlab.com
     User ythakur3
