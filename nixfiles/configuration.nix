@@ -43,19 +43,34 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Needed for i3, apparently
   environment.pathsToLink = [ "/libexec" ];
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
-  # Enable i3
   services.xserver = {
-    
+    # Enable the X11 windowing system.
+    enable = true;
+
+    desktopManager = {
+      xterm.enable = false;
+    };
+
+    # Enable i3
+    displayManager.defaultSession = "none+i3";
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3lock
+      ];
+    };
   };
+
+  programs.dconf.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
