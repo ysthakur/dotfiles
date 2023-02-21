@@ -62,11 +62,19 @@
     displayManager.defaultSession = "none+i3";
     windowManager.i3 = {
       enable = true;
+      configFile = "${config.users.users.yash.home}/.config/i3/config";
       extraPackages = with pkgs; [
         dmenu
         i3status
         i3lock
       ];
+    };
+
+    # Enable touchpad support (enabled by default in most desktop managers)
+    libinput = {
+      enable = true;
+      touchpad.scrollMethod = "twofinger";
+      touchpad.tapping = false;
     };
   };
 
@@ -98,14 +106,12 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yash = {
     isNormalUser = true;
     description = "Yash Thakur";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     # Can just use Home Manager instead
     packages = with pkgs; [ ];
   };
@@ -121,7 +127,15 @@
     wget
     curl
     tmux
+    alacritty
+    dbus
+    # For clipboard stuff
+    xclip
+    python39
   ];
+  environment.variables.TERMINAL = [ "alacritty" ];
+
+  environment.shells = [ pkgs.zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
