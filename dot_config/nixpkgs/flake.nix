@@ -15,12 +15,12 @@
       pkgs = import nixpkgs { inherit system; };
       ocamlPackages = pkgs.recurseIntoAttrs pkgs.ocaml-ng.ocamlPackages_latest;
       # Helper with common config
-      baseConfig = {username, extraPkgs ? []}: {
+      baseConfig = {username, extraPkgs ? [], homeExtra ? {}}: {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           {
             programs.home-manager.enable = true;
-            home = {
+            home = pkgs.lib.recursiveUpdate {
               username = username;
               homeDirectory = "/home/${username}";
               packages = [
@@ -34,7 +34,7 @@
                 pkgs.ncdu
               ] ++ extraPkgs;
               stateVersion = "22.11";
-            };
+            } homeExtra;
           }
         ];
       };
@@ -48,6 +48,13 @@
             kate
             git
           ];
+        homeExtra = {
+          sessionVariables = {
+            EDITOR = "vim";
+            BROWSER = "firefox";
+            TERMINAL = "alacritty";
+          };
+        };
       });
       homeConfigurations.ysthakur = home-manager.lib.homeManagerConfiguration (baseConfig {
         username = "ysthakur";
