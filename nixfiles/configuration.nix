@@ -91,13 +91,8 @@
     isNormalUser = true;
     description = "Yash Thakur";
     extraGroups = [ "networkmanager" "wheel" ];
-    # Put user packages that aren't needed in WSL but are needed
-    # when using NixOS directly
-    packages = with pkgs; [
-      firefox
-      kate
-      git
-    ];
+    # Can just use Home Manager instead
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages

@@ -43,6 +43,11 @@
 
       homeConfigurations.yash = home-manager.lib.homeManagerConfiguration (baseConfig {
         username = "yash";
+        extraPkgs = with pkgs; [
+            firefox
+            kate
+            git
+          ];
       });
       homeConfigurations.ysthakur = home-manager.lib.homeManagerConfiguration (baseConfig {
         username = "ysthakur";
