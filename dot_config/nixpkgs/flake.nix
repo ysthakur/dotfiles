@@ -47,6 +47,9 @@
             firefox
             kate
             git
+            (python310.withPackages (ps: with ps; [
+              virtualenvwrapper
+            ]))
           ];
         homeExtra = {
           sessionVariables = {
