@@ -110,7 +110,7 @@ source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 # Python virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source $HOME/.local/bin/virtualenvwrapper.sh
+source $(command -v virtualenvwrapper.sh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
