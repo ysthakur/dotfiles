@@ -132,6 +132,7 @@
     # For clipboard stuff
     xclip
     python39
+    nodejs-18_x
   ];
   environment.variables.TERMINAL = [ "alacritty" ];
 

@@ -48,7 +48,7 @@
             kate
             git
             (python310.withPackages (ps: with ps; [
-              virtualenvwrapper
+              # virtualenvwrapper
             ]))
           ];
         homeExtra = {
