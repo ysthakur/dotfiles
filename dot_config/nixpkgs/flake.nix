@@ -50,6 +50,8 @@
             (python310.withPackages (ps: with ps; [
               # virtualenvwrapper
             ]))
+            # File explorer
+            xfce.thunar
           ];
         homeExtra = {
           sessionVariables = {
