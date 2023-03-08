@@ -126,6 +126,7 @@
     nano
     wget
     curl
+    unzip
     tmux
     alacritty
     dbus
