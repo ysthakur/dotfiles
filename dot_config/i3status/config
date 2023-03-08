@@ -44,6 +44,7 @@ battery all {
         status_unk = "?"
         status_full= "☻"
         low_threshold = "20"
+        threshold_type = "percentage"
 }
 
 disk "/" {
