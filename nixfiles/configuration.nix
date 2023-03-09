@@ -74,7 +74,7 @@
     libinput = {
       enable = true;
       touchpad.scrollMethod = "twofinger";
-      touchpad.tapping = false;
+      touchpad.tapping = true;
     };
   };
 
