@@ -53,7 +53,7 @@ disk "/" {
 
 load {
         format = "Load:%1min"
-        max_threshold = "2"
+        max_threshold = "4"
 }
 
 memory {
