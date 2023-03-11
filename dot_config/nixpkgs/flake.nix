@@ -45,6 +45,8 @@
       homeConfigurations.yash = createConfig {
         username = "yash";
         extraPkgs = with pkgs; [
+            # Get type of files
+            file
             firefox
             kate
             git
@@ -54,6 +56,10 @@
             # File explorer
             xfce.thunar
             xautolock
+            # See names for events like keys
+            xorg.xev
+            # Simulate keypresses
+            xdotool
           ];
         extra = {
           home.sessionVariables = {
