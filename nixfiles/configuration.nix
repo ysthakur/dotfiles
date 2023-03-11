@@ -70,21 +70,6 @@
       ];
     };
 
-    # Automatic locking
-    xautolock = let
-      lockCmd = "${pkgs.i3lock}/bin/i3lock"; # --ignore-empty-password --show-failed-attempts --image=${config.users.users.yash.home}/screensaver.png\"";
-      notifyTime = 30;
-      in {
-        enable = false;
-        time = 10;
-        locker = lockCmd;
-        #enableNotifier = true;
-        #notify = notifyTime;
-        #notifier = "${pkgs.libnotify}/bin/notify-send \"Locking in ${toString notifyTime} seconds\"";
-        killtime = 20;
-        killer = "/run/current-system/systemd/bin/systemctl suspend";
-      };
-
     # Enable touchpad support (enabled by default in most desktop managers)
     libinput = {
       enable = true;
