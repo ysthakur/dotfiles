@@ -1,0 +1,3 @@
+{{- if ne .chezmoi.hostname "nixos" }}
+screensaver.png # only include screensaver on NixOS
+{{- end }}
