@@ -3,18 +3,7 @@ Host github.com
     HostName github.com
     IdentityFile ~/.ssh/id_ed25519
 
-Host github_cgccuser
-    HostName github.com
-    IdentityFile ~/.ssh/id_ed25519_cgccuser
-
 Host gitlab.com
     User ythakur3
     HostName gitlab.com
     IdentityFile ~/.ssh/id_ed25519_gitlab
-
-Host grace
-    HostName grace.umd.edu
-    # Port 20000 #if custom port is used and not the default 22
-    User ythakur
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519
