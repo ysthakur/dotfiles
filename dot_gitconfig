@@ -6,5 +6,4 @@
         helper = !/usr/bin/gh auth git-credential
 [init]
         defaultBranch = main
-[credential]
-        helper = "!f() { /home/builder/.vscode-server/bin/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/node /tmp/vscode-remote-containers-8330fc3ec582940e6d6b560e8a6c6cd903af47bc.js $*; }; f"
+
