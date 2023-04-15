@@ -60,9 +60,12 @@ SAVEHIST=5000
 # Persist history
 setopt appendhistory
 
-# Enable Ctrl-Left and Ctrl-Right
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+# Enable keys/shortcuts
+bindkey "^[[1;5C" forward-word   # Ctrl+Right
+bindkey "^[[1;5D" backward-word  # Ctrl+Left
+bindkey "^[[H" beginning-of-line # Home
+bindkey "^[[F" end-of-line       # End
+bindkey "^[[3~" delete-char      # Delete
 
 # Don't remember lines starting with a space
 setopt HIST_IGNORE_SPACE
