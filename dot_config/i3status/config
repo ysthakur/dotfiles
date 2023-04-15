@@ -33,17 +33,17 @@ ethernet _first_ {
 
 volume master {
         format = "♪:%volume"
-        format_muted = "♪:%volume (muted)"
+        format_muted = "♪:%volume (mute)"
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage (%emptytime)"
         format_down = "No battery"
         status_chr = "⚡"
         status_bat = "🔋"
         status_unk = "?"
         status_full= "☻"
-        low_threshold = "20"
+        low_threshold = "30"
         threshold_type = "percentage"
 }
 
@@ -57,9 +57,10 @@ load {
 }
 
 memory {
-        format = "Mem:(used %used) (left %available)"
+        format = "Mem:%used/%total"
         threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        threshold_critical = "512M"
+        format_degraded = "MEM < %available left"
 }
 
 tztime local {
