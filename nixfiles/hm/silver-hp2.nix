@@ -2,7 +2,7 @@
 
 let ocamlPackages = pkgs.recurseIntoAttrs pkgs.ocaml-ng.ocamlPackages_latest;
 in {
-  homeConfigurations.ysthakur = util.createConfig {
+  ysthakur = util.createConfig {
     username = "ysthakur";
     hostname = "silver-hp2";
     extraPkgs = [
