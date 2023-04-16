@@ -15,6 +15,7 @@ call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'derekwyatt/vim-scala'
+Plug 'LnL7/vim-nix'
 
 Plug 'https://github.com/joshdick/onedark.vim'
 

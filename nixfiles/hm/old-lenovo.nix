@@ -1,46 +1,46 @@
-{ pkgs, common }:
+{ pkgs, util }:
 
 {
-  homeConfigurations.yash = util.createConfig {
+  yash = util.createConfig {
     username = "yash";
     hostname = "old-lenovo";
     extraPkgs = with pkgs; [
-	# Get type of files
-	file
-	firefox
-	kate
-	git
-	(python310.withPackages (ps: with ps; [
-	  # virtualenvwrapper
-	]))
-	# File explorer
-	xfce.thunar
-	xautolock
-	# See names for events like keys
-	xorg.xev
-	# Simulate keypresses
-	xdotool
+        # Get type of files
+        file
+        firefox
+        kate
+        git
+        (python310.withPackages (ps: with ps; [
+          # virtualenvwrapper
+        ]))
+        # File explorer
+        xfce.thunar
+        xautolock
+        # See names for events like keys
+        xorg.xev
+        # Simulate keypresses
+        xdotool
       ];
     extra = {
       home.sessionVariables = {
-	TERMINAL = "alacritty";
+        TERMINAL = "alacritty";
       };
 
       services.screen-locker = let notifyTime = "30"; in
-	{
-	  enable = true;
-	  inactiveInterval = 10;
-	  lockCmd = "${pkgs.i3lock}/bin/i3lock --ignore-empty-password --show-failed-attempts --image=/home/yash/screensaver.png";
-	  xautolock = {
-	    enable = true;
-	    extraOptions = [
-	      "-killtime" "20"
-	      "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
-	      "-notify" notifyTime
-	      "-notifier \"${pkgs.libnotify}/bin/notify-send 'Locking in ${notifyTime}' seconds\""
-	    ];
-	  };
-	};
+        {
+          enable = true;
+          inactiveInterval = 10;
+          lockCmd = "${pkgs.i3lock}/bin/i3lock --ignore-empty-password --show-failed-attempts --image=/home/yash/screensaver.png";
+          xautolock = {
+            enable = true;
+            extraOptions = [
+              "-killtime" "20"
+              "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
+              "-notify" notifyTime
+              "-notifier \"${pkgs.libnotify}/bin/notify-send 'Locking in ${notifyTime}' seconds\""
+            ];
+          };
+        };
     };
   };
 }

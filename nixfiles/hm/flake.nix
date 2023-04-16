@@ -14,15 +14,12 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       util = import ./util.nix { inherit pkgs system nixpkgs home-manager; };
-      hostname = builtins.getEnv "HOSTNAME";
-      laptopFile =
-        if hostname == "old-lenovo" then ./old-lenovo.nix
-        else if hostname == "silver-hp2" then ./silver-hp2.nix
-        else abort "Invalid hostname ${hostname}";
+      # Get laptop-specific configuration
+      getConfig = file: (import file { inherit pkgs util; });
     in {
       defaultPackage.${system} = home-manager.defaultPackage.${system};
 
-      homeConfigurations = (import laptopFile { inherit pkgs util; }).homeConfigurations;
+      homeConfigurations = (getConfig ./old-lenovo.nix) // (getConfig ./silver-hp2.nix);
     };
 }
 
