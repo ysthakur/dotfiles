@@ -14,12 +14,13 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       util = import ./util.nix { inherit pkgs system nixpkgs home-manager; };
-      # Get laptop-specific configuration
-      getConfig = file: (import file { inherit pkgs util; });
+      hostname =
+        if builtins.pathExists ./hostname.nix then import ./hostname.nix
+        else builtins.abort "No hostname.nix in ~/nixfiles";
     in {
       defaultPackage.${system} = home-manager.defaultPackage.${system};
 
-      homeConfigurations = (getConfig ./old-lenovo.nix) // (getConfig ./silver-hp2.nix);
+      homeConfigurations = import ./${hostname}.nix { inherit pkgs util; };
     };
 }
 
