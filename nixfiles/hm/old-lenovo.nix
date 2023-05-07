@@ -32,7 +32,7 @@
         lockCmd = "${pkgs.i3lock}/bin/i3lock --ignore-empty-password --show-failed-attempts --image=/home/yash/screensaver.png";
         xautolock = {
           enable = true;
-          extraOptions = let notifyTime = 30; in [
+          extraOptions = let notifyTime = "30"; in [
             "-killtime" "15" # Wait 15 minutes before going to sleep
             "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
             "-notify" notifyTime
