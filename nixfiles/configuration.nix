@@ -161,6 +161,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.logind = {
+    # Don't suspend if lid closes and plugged in
+    lidSwitchExternalPower = "lock";
+
+    # Require lid to be closed for 15s before suspending
+    extraConfig = ''
+      HoldoffTimeoutSec=15s
+    '';
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
