@@ -156,7 +156,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lock screen
-bindsym $mod+Control+l exec "i3lock --ignore-empty-password --show-failed-attempts --image=$HOME/screensaver.png"
+bindsym $mod+Control+l exec "loginctl lock-session"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
