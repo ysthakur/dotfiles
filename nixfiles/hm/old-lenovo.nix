@@ -26,21 +26,21 @@
         TERMINAL = "alacritty";
       };
 
-      services.screen-locker = let notifyTime = "30"; in
-        {
+      services.screen-locker = {
+        enable = true;
+        inactiveInterval = 10;
+        lockCmd = "${pkgs.i3lock}/bin/i3lock --ignore-empty-password --show-failed-attempts --image=/home/yash/screensaver.png";
+        xautolock = {
           enable = true;
-          inactiveInterval = 10;
-          lockCmd = "${pkgs.i3lock}/bin/i3lock --ignore-empty-password --show-failed-attempts --image=/home/yash/screensaver.png";
-          xautolock = {
-            enable = true;
-            extraOptions = [
-              "-killtime" "20"
-              "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
-              "-notify" notifyTime
-              "-notifier \"${pkgs.libnotify}/bin/notify-send 'Locking in ${notifyTime}' seconds\""
-            ];
-          };
+          extraOptions = let notifyTime = 30; in [
+            "-killtime" "15" # Wait 15 minutes before going to sleep
+            "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
+            "-notify" notifyTime
+            "-notifier \"${pkgs.libnotify}/bin/notify-send 'Locking in ${notifyTime}' seconds\""
+            "-detectsleep"
+          ];
         };
+      };
     };
   };
 }
