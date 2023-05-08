@@ -134,6 +134,8 @@
     dbus
     # For clipboard stuff
     xclip
+    # To stop i3 looking ugly
+    lxappearance
     python39
     nodejs-18_x
   ];
