@@ -112,7 +112,7 @@
   users.users.yash = {
     isNormalUser = true;
     description = "Yash Thakur";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.zsh;
     # Can just use Home Manager instead
     packages = with pkgs; [ ];

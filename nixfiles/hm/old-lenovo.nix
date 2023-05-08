@@ -22,6 +22,11 @@
         xdotool
       ];
     extra = {
+      programs.i3status-rust = {
+        enable = true;
+        bars = import ./i3status-rust.nix;
+      };
+
       home.sessionVariables = {
         TERMINAL = "alacritty";
       };
