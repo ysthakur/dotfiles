@@ -27,7 +27,7 @@
               EDITOR = "vim";
               BROWSER = "firefox";
             };
-	    stateVersion = "22.11";
+	    stateVersion = "23.05";
 	  };
 	} extra)
       ];
