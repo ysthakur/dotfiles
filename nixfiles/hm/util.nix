@@ -12,15 +12,16 @@
 	  home = {
 	    username = username;
 	    homeDirectory = "/home/${username}";
-	    packages = [
+	    packages = with pkgs; [
+              neovim
 	      # For managing dotfiles
-	      pkgs.chezmoi
+              chezmoi
 	      # GitHub CLI
-	      pkgs.gh
+	      gh
 	      # Prettier ls alternative
-	      # pkgs.exa
+	      # exa
 	      # Show disk usage visually
-	      pkgs.ncdu
+	      ncdu
 	    ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
