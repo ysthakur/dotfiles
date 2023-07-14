@@ -1,5 +1,4 @@
 {{- if ne .chezmoi.hostname "nixos" }}
 screensaver.png # only include screensaver on NixOS
 {{- end }}
-.config/home-manager/hostname.nix # Hostname is different on each laptop
 
