@@ -16,6 +16,8 @@
               neovim
 	      # For managing dotfiles
               chezmoi
+              # For managing different versions of everything
+              asdf-vm
 	      # GitHub CLI
 	      gh
 	      # Prettier ls alternative
