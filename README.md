@@ -1,5 +1,9 @@
 # Configuration stuff
 
+## Miscellaneous
+
+- [asdf](https://asdf-vm.com) - For managing different versions of Node and other stuff
+
 ## Nix
 
 ### Building NixOS configuration
@@ -8,11 +12,15 @@
 sudo nixos-rebuild switch
 ```
 
+NixOS configuration is in `~/nixfiles/configuration.nix`.
+
 ### Building Home Manager configuration
 
 ```bash
-home-manager switch --flake ~/nixfiles/hm
+home-manager switch
 ```
+
+Home Manager configuration is in `~/.config/home-manager`.
 
 ### Listing and removing old generations
 
