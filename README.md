@@ -1,9 +1,5 @@
 # Configuration stuff
 
-## Miscellaneous stuff to install
-
-- [asdf](https://asdf-vm.com/) (version manager for all sorts of runtimes)
-
 ## Nix
 
 ### Building NixOS configuration
