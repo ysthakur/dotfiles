@@ -15,7 +15,7 @@ let
   alternating_tint_fg = "#111111";
 in {
   bottom = {
-    icons = "awesome6";
+    icons = "material-nf";
     theme = "dracula";
     settings = {
       theme = {
@@ -45,6 +45,8 @@ in {
       }
       {
          block = "disk_space";
+         format = " $icon $available ";
+         format_alt = " $icon $available/$total ";
          path = "/";
          info_type = "available";
          interval = 60;
@@ -81,7 +83,7 @@ in {
          block = "battery";
          format = " $icon $percentage ";
          full_format = " $icon $percentage ";
-         not_charging_format = " $icon $percentage {($time)|} ";
+         not_charging_format = " $icon $percentage {($time) |}";
          good = 85;
          warning = 40;
          critical = 20;

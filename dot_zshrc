@@ -98,9 +98,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Load asdf version manager (https://asdf-vm.com)
-. "$HOME/.asdf/asdf.sh"
-
 # Nix home manager
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
