@@ -98,13 +98,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# For sharing oh-my-posh theme, but for Zsh there's Powerlevel10k
-# eval "$(oh-my-posh init zsh --config /mnt/c/users/yasht/custom_prompt_theme.omp.json)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Load ASDF (https://asdf-vm.com)
+# Load asdf version manager (https://asdf-vm.com)
 . "$HOME/.asdf/asdf.sh"
 
 # Nix home manager
