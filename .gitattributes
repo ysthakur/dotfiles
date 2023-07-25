@@ -1,2 +1,9 @@
 dot_p10k.zsh linguist-generated=true
 dot_config/i3status/config linguist-generated=true
+
+dot_zshrc linguist-language=Zsh
+dot_zshenv linguist-language=Zsh
+dot_zprofile linguist-language=Zsh
+
+dot_bashrc linguist-language=Bash
+
