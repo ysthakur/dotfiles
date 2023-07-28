@@ -36,6 +36,11 @@ home-manager generations # List generations
 home-manager remove-generations <generations>
 ```
 
+Running the GC:
+```bash
+nix-store --gc
+```
+
 ### Removing GRUb entries
 
 (from https://discourse.nixos.org/t/how-to-remove-grub-entries-in-grub-cfg/9059)
