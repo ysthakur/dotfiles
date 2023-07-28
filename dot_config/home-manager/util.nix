@@ -14,6 +14,8 @@
 	    homeDirectory = "/home/${username}";
 	    packages = with pkgs; [
               neovim
+              # Trendy new text editor
+              helix
 	      # For managing dotfiles
               chezmoi
               # For managing different versions of everything
