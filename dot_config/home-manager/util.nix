@@ -13,17 +13,12 @@
 	    username = username;
 	    homeDirectory = "/home/${username}";
 	    packages = with pkgs; [
-              neovim
-              # Trendy new text editor
-              helix
 	      # For managing dotfiles
               chezmoi
               # For managing different versions of everything
               asdf-vm
 	      # GitHub CLI
 	      gh
-	      # Prettier ls alternative
-	      # exa
 	      # Show disk usage visually
 	      ncdu
 	    ] ++ extraPkgs;
