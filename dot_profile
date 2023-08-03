@@ -28,7 +28,9 @@ fi
 
 PYTHONPATH="/usr/lib/python3.9:/usr/local/lib/python3.9/dist-packages:$PYTHONPATH"
 export PATH="$PATH:/usr/lib/llvm-12/bin"
-. "$HOME/.cargo/env"
+
+# Load Cargo
+test -f "$HOME/.cargo/env" && . "$HOME/.cargo/env"
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"

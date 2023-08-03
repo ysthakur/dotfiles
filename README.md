@@ -51,3 +51,7 @@ sudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch
 nix-store --gc # Garbage collect the old profiles
 ```
 
+### Background images
+
+`.background-image` is automatically used as the desktop wallpaper by NixOS.
+`screensaver.png` is set up to be used as the screensaver (user-specific config).
