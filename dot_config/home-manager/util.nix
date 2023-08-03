@@ -17,8 +17,6 @@
               chezmoi
               # For managing different versions of everything
               asdf-vm
-	      # GitHub CLI
-	      gh
 	      # Show disk usage visually
 	      ncdu
 	    ] ++ extraPkgs;

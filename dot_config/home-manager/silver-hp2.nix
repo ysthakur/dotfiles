@@ -7,7 +7,10 @@
     extraPkgs = with pkgs; [
         # For image metadata
         exif
+        # Go language
         go
+        # GitHub CLI
+        gh
       ];
     extra = {
       home.sessionVariables = {
