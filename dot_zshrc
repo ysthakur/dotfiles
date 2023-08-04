@@ -104,7 +104,7 @@ export PATH="$PATH:$GOBIN"
 eval "$(zoxide init zsh)"
 
 # Setup oh-my-posh for prompt
-eval "$(oh-my-posh init zsh --config my_prompt_theme.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/my_prompt_theme.omp.json)"
 
 # Setup direnv
 eval "$(direnv hook zsh)"
