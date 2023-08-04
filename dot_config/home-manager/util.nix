@@ -19,6 +19,13 @@
               asdf-vm
 	      # Show disk usage visually
 	      ncdu
+              kakoune
+              # Shiny, rusty new Kakoune-like editor
+              helix
+              # Shiny, rusty new Powershell-like shell
+              nushell
+              # Shiny, rusty cd replacement
+              zoxide
 	    ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
