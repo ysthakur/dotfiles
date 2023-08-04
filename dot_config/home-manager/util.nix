@@ -10,8 +10,13 @@
         (pkgs.lib.recursiveUpdate {
           programs.home-manager.enable = true;
           programs = {
+            kakoune.enable = true;
+
             direnv.enable = true;
             direnv.nix-direnv.enable = true;
+
+            # cat with colors and more
+            bat.enable = true;
           };
           home = {
             username = username;
@@ -23,7 +28,6 @@
               asdf-vm
               # Show disk usage visually
               ncdu
-              kakoune
               # Shiny, rusty new Kakoune-like editor
               helix
               # Shiny, rusty new Powershell-like shell

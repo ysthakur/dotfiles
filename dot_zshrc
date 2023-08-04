@@ -89,7 +89,6 @@ alias ls="ls --color=auto --classify"
 # Make less more convenient
 export LESS="--no-init --quit-if-one-screen -R"
 
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
