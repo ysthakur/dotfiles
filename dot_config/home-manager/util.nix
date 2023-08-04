@@ -34,11 +34,15 @@
               nushell
               # Shiny, rusty cd replacement
               zoxide
+              # For prompt
+              oh-my-posh
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
               EDITOR = "vim";
               BROWSER = "firefox";
+              # Use bat to highlight manpages
+              MANPAGER="sh -c 'col -bx | bat -l man -p'";
             };
             stateVersion = "23.05";
           };
