@@ -37,4 +37,8 @@ export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
 # <<< coursier install directory <<<
 
 if [ -e /home/ysthakur/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ysthakur/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# For Home Manager
+. $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
