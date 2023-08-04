@@ -10,7 +10,19 @@
         (pkgs.lib.recursiveUpdate {
           programs.home-manager.enable = true;
           programs = {
+            java = {
+              enable = true;
+              package = pkgs.jdk17;
+            };
+
+            fzf = {
+              enable = true;
+              tmux.enableShellIntegration = true;
+            };
+
             kakoune.enable = true;
+
+            helix.enable = true;
 
             direnv.enable = true;
             direnv.nix-direnv.enable = true;
@@ -29,8 +41,6 @@
               asdf-vm
               # Show disk usage visually
               ncdu
-              # Shiny, rusty new Kakoune-like editor
-              helix
               # Shiny, rusty new Powershell-like shell
               nushell
               # Shiny, rusty cd replacement
