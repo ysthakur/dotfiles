@@ -22,6 +22,7 @@
             username = username;
             homeDirectory = "/home/${username}";
             packages = with pkgs; [
+              git
               # For managing dotfiles
               chezmoi
               # For managing different versions of everything

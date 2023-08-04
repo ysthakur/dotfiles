@@ -5,5 +5,4 @@ export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
 
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/ysthakur/channels
 
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
