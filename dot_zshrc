@@ -26,9 +26,12 @@ SAVEHIST=5000
 setopt APPEND_HISTORY
 # Remove old commands if duplicated
 setopt HIST_IGNORE_ALL_DUPS
-HISTORY_IGNORE='(git commit *|code *)'
+HISTORY_IGNORE='(git commit (--amend *|-am *))'
 # Don't remember lines starting with a space
 setopt HIST_IGNORE_SPACE
+
+# Never autosuggest anything from history over 60 chars
+ZSH_AUTOSUGGEST_HISTORY_IGNORE='((?(#c60,))|git commit (--amend *|-am *)|git clone *|chezmoi git -- commit *|wget *)'
 
 # Ask to correct command if typoed
 setopt CORRECT
@@ -41,6 +44,7 @@ bindkey "^[[1;5D" backward-word  # Ctrl+Left
 bindkey "^[[H" beginning-of-line # Home
 bindkey "^[[F" end-of-line       # End
 bindkey "^[[3~" delete-char      # Delete
+bindkey "^[[Z" reverse-menu-complete # Shift-Tab to go to previous completion suggestion
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
