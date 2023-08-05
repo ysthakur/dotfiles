@@ -44,6 +44,8 @@ bindkey "^[[1;5D" backward-word  # Ctrl+Left
 bindkey "^[[H" beginning-of-line # Home
 bindkey "^[[F" end-of-line       # End
 bindkey "^[[3~" delete-char      # Delete
+bindkey "^[[A" history-substring-search-up # Up arrow to search previous history
+bindkey "^[[B" history-substring-search-down # Down arrow to search later history
 bindkey "^[[Z" reverse-menu-complete # Shift-Tab to go to previous completion suggestion
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
@@ -68,7 +70,8 @@ zinit wait lucid depth=1 for \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
-      zsh-users/zsh-completions
+      zsh-users/zsh-completions \
+  zsh-users/zsh-history-substring-search
 
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
@@ -118,5 +121,6 @@ eval "$(zoxide init zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/my_prompt_theme.omp.json)"
 
 # Setup direnv
+# TODO possibly use Zinit's recommended way instead
 eval "$(direnv hook zsh)"
 
