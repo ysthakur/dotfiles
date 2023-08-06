@@ -74,8 +74,8 @@ export LANGUAGE=en_US.UTF-8
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
-# Colored output for ls
-alias ls="ls --color=auto --classify"
+# Colored output for ls with human readable sizes
+alias ls="ls --color=auto --classify --human-readable"
 # Make less more convenient
 export LESS="--no-init --quit-if-one-screen -R"
 
