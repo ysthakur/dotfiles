@@ -3,6 +3,8 @@
 ## Miscellaneous
 
 - [asdf](https://asdf-vm.com) - For managing different versions of Node and other stuff
+- Install Python `sh` module to do shell stuff from Python
+  - Drop into `python` repl and use like a shell, but with Python syntax
 
 ## Prompt
 
