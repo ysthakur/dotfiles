@@ -8,7 +8,9 @@
 
 ## Prompt
 
-Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt, configuration is in `my_prompt_theme.omp.json`.
+Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt. The configuration file lives in
+[github.com/ysthakur/shared-config](https://github.com/ysthakur/shared-config/blob/main/my_prompt_theme.omp.json),
+but chezmoi copies it to `~/my_prompt_theme.omp.json` because it's listed in [`.chezmoiexternal.toml`](./.chezmoiexternal.toml).
 
 ## Nix
 
