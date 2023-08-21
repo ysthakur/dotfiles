@@ -20,10 +20,6 @@
               tmux.enableShellIntegration = true;
             };
 
-            kakoune.enable = true;
-
-            helix.enable = true;
-
             direnv.enable = true;
             direnv.nix-direnv.enable = true;
 
@@ -45,6 +41,8 @@
               nushell
               # Shiny, rusty cd replacement
               zoxide
+              # ls replacement
+              exa
               # For prompt
               oh-my-posh
             ] ++ extraPkgs;
