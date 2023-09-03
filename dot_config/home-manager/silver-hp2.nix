@@ -11,6 +11,10 @@
         go
         # GitHub CLI
         gh
+        # For recording terminal sessions
+        asciinema
+        # For CMSC 430
+        nasm
       ];
     extra = {
       home.sessionVariables = {

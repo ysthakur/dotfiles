@@ -38,3 +38,4 @@ if [ -e /home/ysthakur/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ysthaku
 # For Home Manager
 . $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
+. "$HOME/.cargo/env"

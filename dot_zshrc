@@ -102,6 +102,9 @@ export PATH="$HOME/gems/bin:$PATH"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
 
+# Racket
+export PATH="$PATH:$HOME/racket/bin"
+
 # Setup Zoxide
 eval "$(zoxide init zsh)"
 
