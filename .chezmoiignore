@@ -1,4 +1,6 @@
-{{- if ne .chezmoi.hostname "nixos" }}
-screensaver.png # only include screensaver on NixOS
+# only include screensaver on NixOS
+{{- if ne .chezmoi.hostname "old-laptop" }}
+.background-image
+screensaver.png
 {{- end }}
 

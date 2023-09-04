@@ -177,8 +177,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    # Enable flakes
+    experimental-features = [ "nix-command" "flakes" ];
+    keep-outputs = true;
+    keep-derivations = true;
+  };
 
   # Custom path for configuration.nix
   nix.nixPath = [
@@ -193,5 +197,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }

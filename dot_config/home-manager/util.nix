@@ -7,27 +7,55 @@
     home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [
-	(pkgs.lib.recursiveUpdate {
-	  programs.home-manager.enable = true;
-	  home = {
-	    username = username;
-	    homeDirectory = "/home/${username}";
-	    packages = with pkgs; [
-	      # For managing dotfiles
+        (pkgs.lib.recursiveUpdate {
+          programs.home-manager.enable = true;
+          programs = {
+            java = {
+              enable = true;
+              package = pkgs.jdk17;
+            };
+
+            fzf = {
+              enable = true;
+              tmux.enableShellIntegration = true;
+            };
+
+            direnv.enable = true;
+            direnv.nix-direnv.enable = true;
+
+            # cat with colors and more
+            bat.enable = true;
+          };
+          home = {
+            username = username;
+            homeDirectory = "/home/${username}";
+            packages = with pkgs; [
+              git
+              # For managing dotfiles
               chezmoi
               # For managing different versions of everything
               asdf-vm
-	      # Show disk usage visually
-	      ncdu
-	    ] ++ extraPkgs;
+              # Show disk usage visually
+              ncdu
+              # Shiny, rusty new Powershell-like shell
+              nushell
+              # Shiny, rusty cd replacement
+              zoxide
+              # ls replacement
+              exa
+              # For prompt
+              oh-my-posh
+            ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
               EDITOR = "vim";
               BROWSER = "firefox";
+              # Use bat to highlight manpages
+              MANPAGER="sh -c 'col -bx | bat -l man -p'";
             };
-	    stateVersion = "23.05";
-	  };
-	} extra)
+            stateVersion = "23.05";
+          };
+        } extra)
       ];
     };
 }

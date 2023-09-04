@@ -29,12 +29,15 @@ fi
 PYTHONPATH="/usr/lib/python3.9:/usr/local/lib/python3.9/dist-packages:$PYTHONPATH"
 export PATH="$PATH:/usr/lib/llvm-12/bin"
 
-# Load Cargo
-test -f "$HOME/.cargo/env" && . "$HOME/.cargo/env"
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
 # <<< coursier install directory <<<
 
 if [ -e /home/ysthakur/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ysthakur/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+
+# For Home Manager
+. $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+. "$HOME/.cargo/env"
+
