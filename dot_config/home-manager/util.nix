@@ -42,7 +42,7 @@
               # Shiny, rusty cd replacement
               zoxide
               # ls replacement
-              exa
+              eza
               # For prompt
               oh-my-posh
             ] ++ extraPkgs;

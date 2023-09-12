@@ -83,5 +83,5 @@ $env.NU_PLUGIN_DIRS = [
 
 oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
-zoxide init nushell | str replace -as 'let-env ' '$env.' | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 
