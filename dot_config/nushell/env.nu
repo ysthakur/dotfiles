@@ -53,6 +53,9 @@ $env.PROMPT_INDICATOR_VI_INSERT = {|| " : " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| " > " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
+$env.TRANSIENT_PROMPT_COMMAND = {|| "> " }
+$env.TRANSIENT_PROMPT_COMMAND_RIGHT = {|| date now}
+
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -83,5 +86,5 @@ $env.NU_PLUGIN_DIRS = [
 
 oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
-zoxide init nushell | str replace -as 'let-env ' '$env.' | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 

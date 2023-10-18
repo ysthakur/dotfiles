@@ -15,6 +15,11 @@
         asciinema
         # For CMSC 430
         nasm
+        neofetch
+        (texlive.combine {
+          inherit (pkgs.texlive) scheme-basic
+          latexmk latexindent titlesec datetime parskip etoolbox mathtools fmtcount xkeyval soul listings;
+        })
       ];
     extra = {
       home.sessionVariables = {
