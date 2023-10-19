@@ -134,6 +134,7 @@
     lxappearance
     python39
     nodejs-18_x
+    openssl
   ];
   environment.variables = {
     HOSTNAME = config.networking.hostName;

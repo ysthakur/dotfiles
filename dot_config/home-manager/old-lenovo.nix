@@ -20,6 +20,8 @@
         xorg.xev
         # Simulate keypresses
         xdotool
+        # For managing citations
+        zotero
       ];
     extra = {
       programs.i3status-rust = {
