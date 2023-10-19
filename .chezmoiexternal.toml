@@ -1,0 +1,6 @@
+# Fetch Oh My Posh prompt theme
+["my_prompt_theme.omp.json"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/ysthakur/shared-config/main/ysthakur-prompt-theme.omp.json"
+  refreshPeriod = "168h"
+
