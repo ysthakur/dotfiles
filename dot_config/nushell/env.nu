@@ -13,7 +13,7 @@ def create_left_prompt [] {
     }
 
     let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace --string $home "~"),
+        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
         ($env.PWD | str substring ($home | str length)..)
     ] | str join)
 
@@ -21,7 +21,7 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)"
 
-    $path_segment | str replace --all --string (char path_sep) $"($separator_color)/($path_color)"
+    $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
 }
 
 def create_right_prompt [] {
@@ -45,7 +45,11 @@ def create_right_prompt [] {
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 # $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
-
+$env.PROMPT_COMMAND = {||
+  touch /tmp/run_count
+  '1' | save /tmp/run_count --append
+  '>'
+}
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {|| " > " }
@@ -84,7 +88,7 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-oh-my-posh init nu --config ~/my_prompt_theme.omp.json
+# oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
 zoxide init nushell | save -f ~/.zoxide.nu
 
