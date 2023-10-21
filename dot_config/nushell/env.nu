@@ -50,15 +50,17 @@ $env.PROMPT_COMMAND = {||
   '1' | save /tmp/run_count --append
   '>'
 }
+# $env.TRANSIENT_PROMPT_COMMAND = {||
+#  touch /tmp/run_count
+#  '2' | save /tmp/run_count --append
+#  '>>'
+#}
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {|| " > " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| " : " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| " > " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
-
-$env.TRANSIENT_PROMPT_COMMAND = {|| "> " }
-$env.TRANSIENT_PROMPT_COMMAND_RIGHT = {|| date now}
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -90,5 +92,5 @@ $env.NU_PLUGIN_DIRS = [
 
 # oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
-zoxide init nushell | save -f ~/.zoxide.nu
+# zoxide init nushell | save -f ~/.zoxide.nu
 
