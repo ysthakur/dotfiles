@@ -1,7 +1,20 @@
-# Start tmux on login if terminal has more than 15 lines and we're not already in tmux
-if [[ $(tput lines) > 15 ]] && command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+# Start zellij on startup
+if [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        exec zellij attach -c
+    else
+        exec zellij
+    fi
+
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        exit
+    fi
 fi
+# Using zellij ^ instead of tmux now
+# # Start tmux on login if terminal has more than 15 lines and we're not already in tmux
+# if [[ $(tput lines) > 15 ]] && command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 # '-' and '_' interchangeable in completions. Case-sensitive completion must be off.
 HYPHEN_INSENSITIVE="true"

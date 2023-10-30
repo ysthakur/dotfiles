@@ -45,6 +45,8 @@
               eza
               # For prompt
               oh-my-posh
+              # Terminal multiplexer
+              zellij
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
