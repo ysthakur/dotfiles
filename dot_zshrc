@@ -1,5 +1,5 @@
 # Start zellij on startup
-if [[ -z "$ZELLIJ" ]]; then
+if [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         exec zellij attach -c
     else
