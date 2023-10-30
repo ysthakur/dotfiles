@@ -9,7 +9,7 @@
 
 ## Prompt
 
-Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt. The configuration file is [my_prompt_theme.omp.json](my_prompt_theme.omp.json).
+Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt. The [configuration file](https://github.com/ysthakur/shared-config/blob/main/ysthakur-prompt-theme.omp.json) is in the [shared-config](https://github.com/ysthakur/shared-config) repo so that the Windows config can also use it. It's listed in .chezmoiexternal.toml.
 
 ## Nix
 
