@@ -47,6 +47,8 @@
               oh-my-posh
               # Terminal multiplexer
               zellij
+              # Modal editor
+              helix
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
