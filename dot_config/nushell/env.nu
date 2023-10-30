@@ -29,7 +29,7 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | date format '%Y/%m/%d %r')
+        (date now | format date '%Y/%m/%d %r')
     ] | str join | str replace --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
@@ -44,23 +44,18 @@ def create_right_prompt [] {
 
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
-# $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
-$env.PROMPT_COMMAND = {||
-  touch /tmp/run_count
-  '1' | save /tmp/run_count --append
-  '>'
-}
-# $env.TRANSIENT_PROMPT_COMMAND = {||
-#  touch /tmp/run_count
-#  '2' | save /tmp/run_count --append
-#  '>>'
-#}
+$env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {|| " > " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| " : " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| " > " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+$env.PROMPT_COMMAND = {||
+  touch /tmp/run_count
+  '1' | save /tmp/run_count --append
+  '>'
+}
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
