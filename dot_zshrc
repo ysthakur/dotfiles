@@ -1,5 +1,8 @@
+# Session variables set through Nix Home Manager
+source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+
 # Start zellij on startup
-if command -v zellij && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
+if [[ $(command -v zellij) ]] && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         exec zellij attach -c
     else
@@ -7,7 +10,7 @@ if command -v zellij && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
     fi
 
     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-        exit
+        # exit
     fi
 fi
 
@@ -84,7 +87,6 @@ export LANGUAGE=en_US.UTF-8
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
-
 # Colored output for ls with human readable sizes
 #alias ls="ls --color=auto --classify --human-readable"
 alias ls="exa --classify --header --git --group"
@@ -97,14 +99,11 @@ export LESS="--no-init --quit-if-one-screen -R"
 # asdf
 . "$HOME/.nix-profile/share/asdf-vm/asdf.sh"
 
-# Nix home manager
-source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 # Python virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 VIRTUALENV_WRAPPER=$(command -v virtualenvwrapper.sh) && test -f $VIRTUALENV_WRAPPER && source $VIRTUALENV_WRAPPER
-
 
 # Ruby gems
 export GEM_HOME="$HOME/gems"
