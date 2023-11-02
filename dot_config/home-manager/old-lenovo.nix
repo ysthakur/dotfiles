@@ -39,6 +39,14 @@
         ZELLIJ = "non-empty string";
       };
 
+      gtk = {
+        enable = true;
+        theme = {
+          name = "Arc-Lighter";
+          package = pkgs.arc-theme;
+        };
+      };
+
       services.screen-locker = {
         enable = true;
         inactiveInterval = 10;
