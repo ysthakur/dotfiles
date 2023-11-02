@@ -21,7 +21,7 @@
         # Simulate keypresses
         xdotool
         # For managing citations
-        # # # zotero
+        zotero
       ];
     extra = {
       programs.i3status-rust = {
@@ -29,22 +29,8 @@
         bars = import ./i3status-rust.nix;
       };
 
-      programs.rofi = {
-        enable = true;
-      };
-
       home.sessionVariables = {
         TERMINAL = "alacritty";
-        # To prevent Zellij from running (no need for it with i3)
-        ZELLIJ = "non-empty string";
-      };
-
-      gtk = {
-        enable = true;
-        theme = {
-          name = "Arc-Lighter";
-          package = pkgs.arc-theme;
-        };
       };
 
       services.screen-locker = {

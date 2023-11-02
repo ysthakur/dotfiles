@@ -34,7 +34,8 @@
               # For managing dotfiles
               chezmoi
               # For managing different versions of everything
-              asdf-vm
+              # asdf-vm # rtx supposedly better than asdf
+              rtx
               # Show disk usage visually
               ncdu
               # Shiny, rusty new Powershell-like shell
