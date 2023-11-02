@@ -20,6 +20,8 @@
           inherit (pkgs.texlive) scheme-basic
           latexmk latexindent titlesec datetime parskip etoolbox mathtools fmtcount xkeyval soul listings;
         })
+        # Alternative to LaTeX
+        typst
       ];
     extra = {
       home.sessionVariables = {
