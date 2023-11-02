@@ -802,7 +802,9 @@ $env.config = {
     ]
 }
 
-# source ~/.zoxide.nu
+source ~/.zoxide.nu
 
-# source ~/.oh-my-posh.nu
+source ~/.oh-my-posh.nu
 
+# rtx version manager
+source ~/.config/nushell/rtx.nu

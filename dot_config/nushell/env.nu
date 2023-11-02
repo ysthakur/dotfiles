@@ -50,12 +50,6 @@ $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 $env.PROMPT_INDICATOR = {|| " > " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| " : " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| " > " }
-$env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
-$env.PROMPT_COMMAND = {||
-  touch /tmp/run_count
-  '1' | save /tmp/run_count --append
-  '>'
-}
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -85,7 +79,7 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-# oh-my-posh init nu --config ~/my_prompt_theme.omp.json
+oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
-# zoxide init nushell | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 
