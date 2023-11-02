@@ -64,6 +64,9 @@ zinit wait lucid depth=1 for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+zinit light chisui/zsh-nix-shell
+zinit light nix-community/nix-zsh-completions
+
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”; zstyle ":completion:*" menu select'
