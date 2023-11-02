@@ -22,6 +22,8 @@
         })
         # Alternative to LaTeX
         typst
+        # File explorer
+        xfce.thunar
       ];
     extra = {
       home.sessionVariables = {
