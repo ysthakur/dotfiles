@@ -1,9 +1,0 @@
-Host github.com
-    User git
-    HostName github.com
-    IdentityFile ~/.ssh/id_ed25519
-
-Host gitlab.com
-    User ythakur3
-    HostName gitlab.com
-    IdentityFile ~/.ssh/id_ed25519_gitlab
