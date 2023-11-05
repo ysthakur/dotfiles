@@ -7,13 +7,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, home-manager, ...}:
+  outputs = { nixpkgs, home-manager, nix-index-database, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      util = import ./util.nix { inherit pkgs system nixpkgs home-manager; };
+      util = import ./util.nix { inherit pkgs system nixpkgs home-manager nix-index-database; };
       hostname =
         if builtins.pathExists ./hostname.nix then import ./hostname.nix
         else builtins.abort "No hostname.nix in ~/nixfiles";

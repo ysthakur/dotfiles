@@ -1,5 +1,5 @@
 # Common configuration for all laptops
-{ home-manager, pkgs, system, nixpkgs }:
+{ home-manager, pkgs, system, nixpkgs, nix-index-database }:
 
 {
   # Helper to create config
@@ -7,6 +7,7 @@
     home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [
+        nix-index-database.hmModules.nix-index
         (pkgs.lib.recursiveUpdate {
           programs.home-manager.enable = true;
           programs = {
@@ -25,6 +26,9 @@
 
             # cat with colors and more
             bat.enable = true;
+
+            # Run commands without installing (uses nix-shell)
+            nix-index-database.comma.enable = true;
           };
           home = {
             username = username;
