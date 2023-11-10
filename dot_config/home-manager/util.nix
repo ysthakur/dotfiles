@@ -60,7 +60,10 @@
               EDITOR = "vim";
               BROWSER = "firefox";
               # Use bat to highlight manpages
-              MANPAGER="sh -c 'col -bx | bat -l man -p'";
+              MANPAGER = "sh -c 'col -bx | bat -plman'";
+              MANROFFOPT = "-c"; # Required for bat to highlight manpages correctly
+              # Make less more convenient
+              LESS = "--no-init --quit-if-one-screen -R";
             };
             stateVersion = "23.05";
           };

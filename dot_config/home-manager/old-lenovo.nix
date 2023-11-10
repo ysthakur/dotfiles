@@ -14,14 +14,14 @@
           # virtualenvwrapper
         ]))
         # File explorer
-        xfce.thunar
+        cinnamon.nemo
         xautolock
         # See names for events like keys
         xorg.xev
         # Simulate keypresses
         xdotool
         # For managing citations
-        # # # zotero
+        # zotero
       ];
     extra = {
       programs.i3status-rust = {

@@ -1,0 +1,7 @@
+[plugins]
+amm = "https://github.com/ysthakur/asdf-amm.git"
+node = "https://github.com/rtx-plugins/rtx-nodejs.git"
+
+[tools]
+amm = "3.2-2.5.9"
+
