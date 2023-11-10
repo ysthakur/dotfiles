@@ -62,3 +62,4 @@ nix-store --gc # Garbage collect the old profiles
 
 `.background-image` is automatically used as the desktop wallpaper by NixOS.
 `screensaver.png` is set up to be used as the screensaver (user-specific config).
+
