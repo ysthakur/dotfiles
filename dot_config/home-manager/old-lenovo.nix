@@ -22,6 +22,8 @@
         xdotool
         # For managing citations
         # zotero
+        # Note-taking tool
+        obsidian
       ];
     extra = {
       programs.i3status-rust = {

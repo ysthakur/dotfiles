@@ -16,7 +16,11 @@
   outputs = { nixpkgs, home-manager, nix-index-database, ... }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        # Allow unfree packages like Obsidian
+        config.allowUnfree = true;
+      };
       util = import ./util.nix { inherit pkgs system nixpkgs home-manager nix-index-database; };
       hostname =
         if builtins.pathExists ./hostname.nix then import ./hostname.nix
