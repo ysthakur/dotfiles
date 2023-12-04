@@ -1,6 +1,6 @@
 
 # >>> coursier install directory >>>
-export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
+export PATH="/home/ysthakur/.local/share/coursier/bin:$PATH"
 # <<< coursier install directory <<<
 
 export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/ysthakur/channels
