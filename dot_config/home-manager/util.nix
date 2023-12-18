@@ -27,6 +27,8 @@
               # other plugins there using vim-plug
               enable = true;
               plugins = [ pkgs.vimPlugins.vim-plug ];
+              # Assumes this file is in ~/.config/home-manager and the
+              # Neovim config is in ~/.config/nvim/init.vim
               extraConfig = pkgs.lib.fileContents ./init.vim;
             };
 
