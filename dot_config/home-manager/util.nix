@@ -43,7 +43,8 @@
               # Show disk usage visually
               ncdu
               # Shiny, rusty new Powershell-like shell
-              nushell
+              nushellFull
+              nu_scripts
               # Shiny, rusty cd replacement
               zoxide
               # ls replacement
