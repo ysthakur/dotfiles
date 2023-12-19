@@ -21,19 +21,19 @@ def "parse vars" [] {
   $in | lines | parse "{op},{name},{value}"
 }
   
-def --wrapped rtx [command?: string, --help, ...rest: string] {
+def-env rtx [command?: string, --help, ...rest: string] {
   let commands = ["shell", "deactivate"]
   
   if ($command == null) {
-    ^"/nix/store/vf5mxky04nnknx8p4sy3w6pjij4450nn-rtx-2023.11.2/bin/rtx"
+    ^"/nix/store/cnca6q1yf852b8l8gq26dvxdki8xsi9w-rtx-2023.10.1/bin/rtx"
   } else if ($command == "activate") {
-    $env.RTX_SHELL = "nu"
+    let-env RTX_SHELL = "nu"
   } else if ($command in $commands) {
-    ^"/nix/store/vf5mxky04nnknx8p4sy3w6pjij4450nn-rtx-2023.11.2/bin/rtx" $command $rest
+    ^"/nix/store/cnca6q1yf852b8l8gq26dvxdki8xsi9w-rtx-2023.10.1/bin/rtx" $command $rest
     | parse vars
     | update-env
   } else {
-    ^"/nix/store/vf5mxky04nnknx8p4sy3w6pjij4450nn-rtx-2023.11.2/bin/rtx" $command $rest
+    ^"/nix/store/cnca6q1yf852b8l8gq26dvxdki8xsi9w-rtx-2023.10.1/bin/rtx" $command $rest
   }
 }
   
@@ -48,7 +48,7 @@ def-env "update-env" [] {
 }
   
 def-env rtx_hook [] {
-  ^"/nix/store/vf5mxky04nnknx8p4sy3w6pjij4450nn-rtx-2023.11.2/bin/rtx" hook-env -s nu
+  ^"/nix/store/cnca6q1yf852b8l8gq26dvxdki8xsi9w-rtx-2023.10.1/bin/rtx" hook-env -s nu
     | parse vars
     | update-env
 }

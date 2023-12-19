@@ -21,6 +21,17 @@
               tmux.enableShellIntegration = true;
             };
 
+            neovim = {
+              # Only use the config here to install the vim-plug plugin,
+              # then use init.vim for the actual config and install the
+              # other plugins there using vim-plug
+              enable = true;
+              plugins = [ pkgs.vimPlugins.vim-plug ];
+              # Assumes this file is in ~/.config/home-manager and the
+              # Neovim config is in ~/.config/nvim/init.vim
+              extraConfig = pkgs.lib.fileContents ./init.vim;
+            };
+
             direnv.enable = true;
             direnv.nix-direnv.enable = true;
 
