@@ -66,6 +66,8 @@
               zellij
               # Modal editor
               helix
+              # IDE layer for NeoVim
+              lunarvim
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;

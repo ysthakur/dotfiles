@@ -39,7 +39,7 @@ HISTORY_IGNORE='(git commit (--amend *|-am *))'
 setopt HIST_IGNORE_SPACE
 
 # Never autosuggest anything from history over 60 chars
-ZSH_AUTOSUGGEST_HISTORY_IGNORE='((?(#c60,))|git commit (--amend *|-am *)|git clone *|chezmoi git -- commit *|wget *)'
+ZSH_AUTOSUGGEST_HISTORY_IGNORE='((?(#c60,))|git commit (--amend *|-am *)|chezmoi git -- commit *|wget *)'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 # Ask to correct command if typoed
@@ -84,14 +84,11 @@ bindkey "^[[F" end-of-line       # End
 bindkey "^[[3~" delete-char      # Delete
 bindkey "^[[Z" reverse-menu-complete # Shift-Tab to go to previous completion suggestion
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
-
 
 # Colored output for ls with human readable sizes
 #alias ls="ls --color=auto --classify --human-readable"
@@ -108,7 +105,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 VIRTUALENV_WRAPPER=$(command -v virtualenvwrapper.sh) && test -f $VIRTUALENV_WRAPPER && source $VIRTUALENV_WRAPPER
 
-
 # Ruby gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
@@ -120,6 +116,8 @@ export PATH="$PATH:$GOBIN"
 # Racket
 export PATH="$PATH:$HOME/racket/bin"
 
+export PATH="$HOME/bin:$PATH"
+
 # Setup Zoxide
 eval "$(zoxide init zsh)"
 
@@ -129,4 +127,3 @@ eval "$(oh-my-posh init zsh --config $HOME/my_prompt_theme.omp.json)"
 # Setup direnv
 # TODO possibly use Zinit's recommended way instead
 eval "$(direnv hook zsh)"
-
