@@ -68,6 +68,8 @@
               helix
               # IDE layer for NeoVim
               lunarvim
+              # Completer
+              carapace
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;

@@ -49,9 +49,6 @@ lvim.builtin.treesitter.auto_install = true
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
--- --- disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
-
 -- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
@@ -109,3 +106,35 @@ lvim.builtin.treesitter.auto_install = true
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+
+lvim.plugins = {
+    {
+      "scalameta/nvim-metals",
+      config = function()
+        require("user.metals").config()
+      end,
+    },
+}
+
+dap.configurations.scala = {
+  {
+    type = "scala",
+    request = "launch",
+    name = "Run or Test Target",
+    metals = {
+      runType = "runOrTestFile",
+    },
+  },
+  {
+    type = "scala",
+    request = "launch",
+    name = "Test Target",
+    metals = {
+      runType = "testTarget",
+    },
+  },
+}
+
+lvim.builtin.dap.active = true
+lvim.format_on_save.enabled = true
+
