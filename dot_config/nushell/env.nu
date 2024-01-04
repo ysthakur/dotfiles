@@ -79,3 +79,6 @@ oh-my-posh init nu --config ~/my_prompt_theme.omp.json
 
 zoxide init nushell | save -f ~/.zoxide.nu
 
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
