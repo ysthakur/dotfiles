@@ -2,10 +2,11 @@
         email = 45539777+ysthakur@users.noreply.github.com
         name = ysthakur
 [credential "https://github.com"]
-        helper =
+        helper = store
 #        helper = !/usr/bin/env gh auth git-credential
 [init]
         defaultBranch = main
 
 [pull]
 	rebase = false
+
