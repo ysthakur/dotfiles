@@ -1,11 +1,10 @@
-{ username, hostname, pkgs, util }:
+{ username, hostname, pkgs, util, extraPkgs ? [] }:
 
 let theiaPackages = with pkgs; [ sqlite sqlite.dev ];
 in
 {
   ${username} = util.createConfig {
-    username = username;
-    hostname = hostname;
+    inherit username hostname;
     extraPkgs = (with pkgs; [
         # For image metadata
         exif
@@ -25,7 +24,9 @@ in
         typst
         # File explorer
         xfce.thunar
-      ]) ++ theiaPackages;
+        # Website builder
+        hugo
+      ]) ++ theiaPackages ++ extraPkgs;
     extra = {
       home.sessionVariables = {
         GOBIN = "/home/ysthakur/go/bin";
@@ -33,4 +34,3 @@ in
     };
   };
 }
-

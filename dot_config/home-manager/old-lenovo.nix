@@ -1,4 +1,4 @@
-{ pkgs, util }:
+{ pkgs, util, flakePkgs }:
 
 {
   yash = util.createConfig {
@@ -24,6 +24,8 @@
         # zotero
         # Note-taking tool
         obsidian
+        # Ghostty beta
+        flakePkgs.ghostty
       ];
     extra = {
       programs.i3status-rust = {

@@ -1,4 +1,4 @@
-{ pkgs, util }:
+{ pkgs, util, flakePkgs }:
 
 (import ./wsl.nix {
   inherit pkgs util;
