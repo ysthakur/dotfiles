@@ -77,6 +77,7 @@ zinit wait lucid depth=1 for \
 ## End zinit stuff
 
 # Enable keys/shortcuts
+WORDCHARS=''
 bindkey "^[[1;5C" forward-word   # Ctrl+Right
 bindkey "^[[1;5D" backward-word  # Ctrl+Left
 bindkey "^[[H" beginning-of-line # Home
@@ -131,3 +132,6 @@ eval "$(oh-my-posh init zsh --config $HOME/my_prompt_theme.omp.json)"
 # Setup direnv
 # TODO possibly use Zinit's recommended way instead
 eval "$(direnv hook zsh)"
+
+# Don't make .NET complain about not finding a valid ICU package
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
