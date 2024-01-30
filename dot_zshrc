@@ -135,3 +135,6 @@ eval "$(direnv hook zsh)"
 
 # Don't make .NET complain about not finding a valid ICU package
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
+
