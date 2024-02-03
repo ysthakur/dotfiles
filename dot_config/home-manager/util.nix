@@ -40,6 +40,9 @@
 
             # Run commands without installing (uses nix-shell)
             nix-index-database.comma.enable = true;
+
+            # Better than asdf-vm, supposedly
+            mise.enable = true;
           };
           home = {
             username = username;
@@ -48,9 +51,6 @@
               git
               # For managing dotfiles
               chezmoi
-              # For managing different versions of everything
-              # asdf-vm # rtx supposedly better than asdf
-              rtx
               # Show disk usage visually
               ncdu
               # Shiny, rusty new Powershell-like shell

@@ -1,8 +1,8 @@
 # Session variables set through Nix Home Manager
 source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 
-# Start zellij on startup
-if [[ $(command -v zellij) ]] && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
+# Start zellij on startup but only if in interactive shell and terminal big enough
+if [[ $- == *i* ]] && [[ $(command -v zellij) ]] && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         exec zellij attach -c
     else
@@ -102,8 +102,8 @@ alias ls="exa --classify --header --git --group"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Shell hook for rtx version manager
-eval "$(rtx activate zsh)"
+# Shell hook for mise version manager
+eval "$(~/.local/bin/mise activate zsh)"
 
 # Python virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs

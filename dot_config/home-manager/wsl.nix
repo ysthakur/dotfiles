@@ -14,8 +14,6 @@ in
         gh
         # For recording terminal sessions
         asciinema
-        # For CMSC 430
-        nasm
         (texlive.combine {
           inherit (pkgs.texlive) scheme-basic
           latexmk latexindent titlesec datetime parskip etoolbox mathtools fmtcount xkeyval soul listings;
@@ -34,3 +32,4 @@ in
     };
   };
 }
+
