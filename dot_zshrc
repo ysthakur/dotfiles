@@ -103,7 +103,7 @@ alias ls="exa --classify --header --git --group"
 # export ARCHFLAGS="-arch x86_64"
 
 # Shell hook for mise version manager
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # Python virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs

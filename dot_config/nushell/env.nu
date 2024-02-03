@@ -2,6 +2,9 @@
 #
 # version = 0.83.1
 
+# Windows uses USERPROFILE instead of HOME
+$env.HOME = $env.HOME? | default $env.USERPROFILE?
+
 def create_left_prompt [] {
     mut home = ""
     try {
