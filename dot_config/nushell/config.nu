@@ -806,9 +806,6 @@ source ~/.zoxide.nu
 
 source ~/.oh-my-posh.nu
 
-# rtx version manager
-source ~/.config/nushell/rtx.nu
-
 use custom-completions/git/git-completions.nu *
 use custom-completions/cargo/cargo-completions.nu *
 use custom-completions/nix/nix-completions.nu *
