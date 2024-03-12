@@ -49,27 +49,17 @@
             homeDirectory = "/home/${username}";
             packages = with pkgs; [
               git
-              # For managing dotfiles
-              chezmoi
-              # Show disk usage visually
-              ncdu
-              # Shiny, rusty new Powershell-like shell
-              nushellFull
+              chezmoi # For managing dotfiles
+              ncdu # Show disk usage visually
+              nushellFull # Nushell with features extra and sqlite
               nu_scripts
-              # Shiny, rusty cd replacement
-              zoxide
-              # ls replacement
-              eza
-              # For prompt
-              oh-my-posh
-              # Terminal multiplexer
-              zellij
-              # Modal editor
-              helix
-              # IDE layer for NeoVim
-              lunarvim
-              # Completer
-              carapace
+              zoxide # cd replacement with extra features
+              eza # ls replacement
+              oh-my-posh # For fancy prompt
+              zellij # Terminal multiplexer (easier to use than tmux)
+              helix # Modal editor
+              carapace # Completer
+              jujutsu # (jj: Git-compatible version control system)
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
