@@ -75,5 +75,4 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-export DENO_INSTALL="/home/ysthakur/.deno"
 . "$HOME/.cargo/env"

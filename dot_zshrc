@@ -110,17 +110,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 VIRTUALENV_WRAPPER=$(command -v virtualenvwrapper.sh) && test -f $VIRTUALENV_WRAPPER && source $VIRTUALENV_WRAPPER
 
-# Ruby gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
-# Go
-export GOBIN="$HOME/go/bin"
-export PATH="$PATH:$GOBIN"
-
-# Racket
-export PATH="$PATH:$HOME/racket/bin"
-
 export PATH="$HOME/bin:$PATH"
 
 # Setup Zoxide
