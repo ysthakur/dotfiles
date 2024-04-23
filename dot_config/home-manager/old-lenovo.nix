@@ -25,7 +25,7 @@
         # Note-taking tool
         obsidian
         # Ghostty beta
-        flakePkgs.ghostty
+        # flakePkgs.ghostty
       ];
     extra = {
       programs.i3status-rust = {
