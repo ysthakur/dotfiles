@@ -22,8 +22,6 @@
         xdotool
         # For managing citations
         # zotero
-        # Note-taking tool
-        obsidian
         # Ghostty beta
         # flakePkgs.ghostty
       ];
@@ -58,6 +56,7 @@
         xautolock = {
           enable = true;
           extraOptions = let notifyTime = "30"; in [
+            "-corners" "----" # Don't sleep if mouse in any corner
             "-killtime" "15" # Wait 15 minutes before going to sleep
             "-killer" "\"/run/current-system/systemd/bin/systemctl suspend\""
             "-notify" notifyTime
