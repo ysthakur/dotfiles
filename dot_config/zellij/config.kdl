@@ -259,26 +259,22 @@ plugins {
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
-//
 themes {
-    gruvbox-light {
-        fg 60 56 54
-        bg 251 82 75
-        black 40 40 40
-        red 205 75 69
-        green 152 151 26
-        yellow 215 153 33
-        blue 69 133 136
-        magenta 177 98 134
-        cyan 104 157 106
-        white 213 196 161
-        orange 214 93 14
-    }
+  catppuccin-latte {
+    bg "#acb0be" // Surface2
+    fg "#acb0be" // Surface2
+    red "#d20f39"
+    green "#40a02b"
+    blue "#1e66f5"
+    yellow "#df8e1d"
+    magenta "#ea76cb" // Pink
+    orange "#fe640b" // Peach
+    cyan "#04a5e5" // Sky
+    black "#dce0e8" // Crust
+    white "#4c4f69" // Text
+  }
 }
-
-// Choose the theme that is specified in the themes section.
-// Default: default
-theme "gruvbox-light"
+theme "catppuccin-latte"
 
 // The name of the default layout to load on startup
 // Default: "default"
