@@ -51,7 +51,7 @@
               git
               chezmoi # For managing dotfiles
               ncdu # Show disk usage visually
-              nushellFull # Nushell with features extra and sqlite
+              nushell
               nu_scripts
               zoxide # cd replacement with extra features
               eza # ls replacement
