@@ -122,8 +122,3 @@ eval "$(oh-my-posh init zsh --config $HOME/my_prompt_theme.omp.json)"
 # TODO possibly use Zinit's recommended way instead
 eval "$(direnv hook zsh)"
 
-# Don't make .NET complain about not finding a valid ICU package
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
-
