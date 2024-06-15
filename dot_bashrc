@@ -75,4 +75,16 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
+# <<< coursier install directory <<<
+
+if [ -e /home/ysthakur/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ysthakur/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# For Home Manager
+. $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
 . "$HOME/.cargo/env"
+
