@@ -2,7 +2,7 @@
 #
 # version = 0.83.1
 
-use wsl-util.nu
+use scripts/wsl-util.nu
 
 # Windows uses USERPROFILE instead of HOME
 $env.HOME = $env.HOME? | default $env.USERPROFILE?
@@ -24,7 +24,7 @@ $env.ENV_CONVERSIONS = {
 
 # Directories to search for scripts when calling source or use
 $env.NU_LIB_DIRS = [
-    # ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
     $"($env.HOME)/.nix-profile/share/nu_scripts/"
 ]
 
@@ -36,7 +36,9 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-if (wsl-util is-wsl) and (wsl-util is-light-theme) {
+$env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
+
+if $env.LIGHT_THEME {
   oh-my-posh init nu --config ~/ysthakur_prompt_theme_light.omp.json
 } else {
   oh-my-posh init nu --config ~/my_prompt_theme.omp.json
