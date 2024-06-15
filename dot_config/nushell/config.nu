@@ -14,45 +14,24 @@ let dark_theme = {
     empty: blue
     # Closures can be used to choose colors for specific values.
     # The value (in this case, a bool) is piped into the closure.
-    bool: {|| if $in { 'light_cyan' } else { 'light_gray' } }
+    # eg) {|| if $in { 'light_cyan' } else { 'light_gray' } }
+    bool: light_cyan
     int: white
-    filesize: {|e|
-        if $e == 0b {
-            'white'
-        } else if $e < 1mb {
-            'cyan'
-        } else { 'blue' }
-    }
+    filesize: cyan
     duration: white
-    date: {|| (date now) - $in |
-        if $in < 1hr {
-            'purple'
-        } else if $in < 6hr {
-            'red'
-        } else if $in < 1day {
-            'yellow'
-        } else if $in < 3day {
-            'green'
-        } else if $in < 1wk {
-            'light_green'
-        } else if $in < 6wk {
-            'cyan'
-        } else if $in < 52wk {
-            'blue'
-        } else { 'dark_gray' }
-    }
+    date: purple
     range: white
     float: white
     string: white
     nothing: white
     binary: white
-    cellpath: white
+    cell-path: white
     row_index: green_bold
     record: white
     list: white
     block: white
     hints: dark_gray
-    search_result: {bg: red fg: white}    
+    search_result: { bg: red fg: white }
     shape_and: purple_bold
     shape_binary: purple_bold
     shape_block: blue_bold
@@ -63,6 +42,7 @@ let dark_theme = {
     shape_directory: cyan
     shape_external: cyan
     shape_externalarg: green_bold
+    shape_external_resolved: light_yellow_bold
     shape_filepath: cyan
     shape_flag: blue_bold
     shape_float: purple_bold
@@ -71,6 +51,7 @@ let dark_theme = {
     shape_globpattern: cyan_bold
     shape_int: purple_bold
     shape_internalcall: cyan_bold
+    shape_keyword: cyan_bold
     shape_list: cyan_bold
     shape_literal: blue
     shape_match_pattern: green
@@ -88,6 +69,7 @@ let dark_theme = {
     shape_table: blue_bold
     shape_variable: purple
     shape_vardecl: purple
+    shape_raw_string: light_purple
 }
 
 let light_theme = {
@@ -98,45 +80,24 @@ let light_theme = {
     empty: blue
     # Closures can be used to choose colors for specific values.
     # The value (in this case, a bool) is piped into the closure.
-    bool: {|| if $in { 'dark_cyan' } else { 'dark_gray' } }
+    # eg) {|| if $in { 'dark_cyan' } else { 'dark_gray' } }
+    bool: dark_cyan
     int: dark_gray
-    filesize: {|e|
-        if $e == 0b {
-            'dark_gray'
-        } else if $e < 1mb {
-            'cyan_bold'
-        } else { 'blue_bold' }
-    }
+    filesize: cyan_bold
     duration: dark_gray
-    date: {|| (date now) - $in |
-        if $in < 1hr {
-            'purple'
-        } else if $in < 6hr {
-            'red'
-        } else if $in < 1day {
-            'yellow'
-        } else if $in < 3day {
-            'green'
-        } else if $in < 1wk {
-            'light_green'
-        } else if $in < 6wk {
-            'cyan'
-        } else if $in < 52wk {
-            'blue'
-        } else { 'dark_gray' }
-    }
+    date: purple
     range: dark_gray
     float: dark_gray
     string: dark_gray
     nothing: dark_gray
     binary: dark_gray
-    cellpath: dark_gray
+    cell-path: dark_gray
     row_index: green_bold
-    record: white
-    list: white
-    block: white
+    record: dark_gray
+    list: dark_gray
+    block: dark_gray
     hints: dark_gray
-    search_result: {fg: white bg: red}    
+    search_result: { fg: white bg: red }
     shape_and: purple_bold
     shape_binary: purple_bold
     shape_block: blue_bold
@@ -147,6 +108,7 @@ let light_theme = {
     shape_directory: cyan
     shape_external: cyan
     shape_externalarg: green_bold
+    shape_external_resolved: light_purple_bold
     shape_filepath: cyan
     shape_flag: blue_bold
     shape_float: purple_bold
@@ -155,6 +117,7 @@ let light_theme = {
     shape_globpattern: cyan_bold
     shape_int: purple_bold
     shape_internalcall: cyan_bold
+    shape_keyword: cyan_bold
     shape_list: cyan_bold
     shape_literal: blue
     shape_match_pattern: green
@@ -172,6 +135,7 @@ let light_theme = {
     shape_table: blue_bold
     shape_variable: purple
     shape_vardecl: purple
+    shape_raw_string: light_purple
 }
 
 # The default config record. This is where much of your global configuration is setup.
@@ -265,7 +229,7 @@ $env.config = {
         vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line (underscore is the default)
     }
 
-    color_config: {} # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
+    color_config: $light_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
     use_grid_icons: true
     footer_mode: "25" # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
