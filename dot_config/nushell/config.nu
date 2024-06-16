@@ -22,7 +22,7 @@ let dark_theme = {
     date: purple
     range: white
     float: white
-    string: white
+    string: {|| if $in =~ '^#[a-fA-F\d]{6}$' { $in } else { 'dark_gray' } }
     nothing: white
     binary: white
     cell-path: white
@@ -88,7 +88,7 @@ let light_theme = {
     date: purple
     range: dark_gray
     float: dark_gray
-    string: dark_gray
+    string: {|| if $in =~ '^#[a-fA-F\d]{6}$' { $in } else { 'dark_gray' } }
     nothing: dark_gray
     binary: dark_gray
     cell-path: dark_gray
