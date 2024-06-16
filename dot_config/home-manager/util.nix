@@ -60,6 +60,7 @@
               helix # Modal editor
               carapace # Completer
               jujutsu # (jj: Git-compatible version control system)
+              vivid # To generate LS_COLORS and stuff
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
