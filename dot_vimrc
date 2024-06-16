@@ -28,7 +28,7 @@ Plug 'eslint/eslint'
 call plug#end()
 
 syntax on
-colorscheme onedark
+colorscheme default
 
 " Highlight sbt files as Scala files
 au BufRead,BufNewFile *.sbt set filetype=scala
