@@ -1,4 +1,4 @@
-:set number
+set number
 
 set shiftwidth=2
 
@@ -17,8 +17,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'derekwyatt/vim-scala'
 Plug 'LnL7/vim-nix'
 
-Plug 'https://github.com/joshdick/onedark.vim'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -35,7 +33,7 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='deus'
+let g:airline_theme = 'solarized'
 
 " Begin example Coc configuration
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
