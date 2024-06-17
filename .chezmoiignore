@@ -4,3 +4,7 @@
 screensaver.png
 {{- end }}
 
+# Nushell history
+.config/nushell/history.txt
+.config/nushell/history.sqlite3*
+
