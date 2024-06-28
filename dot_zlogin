@@ -1,13 +1,15 @@
 # Start zellij on startup but only if in interactive shell and terminal big enough
-if [[ $- == *i* ]] && [[ $(command -v zellij) ]] && [[ $(tput lines) > 15 ]] && [[ -z "$ZELLIJ" ]]; then
-    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-        exec zellij attach -c
-    else
-        exec zellij
-    fi
+if [[ $- == *i* ]] && [[ $(command -v zellij) ]] && [[ $(tput lines) > 1005 ]] && [[ -z "$ZELLIJ" ]]; then
+  if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+    exec zellij attach -c # --default-shell nu
+  else
+    exec zellij
+  fi
 
-    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-        exit
-    fi
+  if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+    exit
+  fi
+else
+  # exec nu
 fi
 

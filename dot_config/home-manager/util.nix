@@ -41,7 +41,7 @@
             # Run commands without installing (uses nix-shell)
             nix-index-database.comma.enable = true;
 
-            # Better than asdf-vm, supposedly
+            # Better than asdf-vm
             mise.enable = true;
           };
           home = {
@@ -61,6 +61,7 @@
               carapace # Completer
               jujutsu # (jj: Git-compatible version control system)
               vivid # To generate LS_COLORS and stuff
+              mosh # ssh replacement
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
