@@ -1,4 +1,7 @@
-theme = "onedark"
+theme = "term16_light"
+
+[editor]
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"

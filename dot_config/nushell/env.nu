@@ -36,7 +36,7 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-$env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
+$env.LIGHT_THEME = true # (wsl-util is-wsl) and (wsl-util is-light-theme)
 
 if $env.LIGHT_THEME {
   oh-my-posh init nu --config ~/ysthakur_prompt_theme_light.omp.json
