@@ -52,3 +52,7 @@ carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force
+
+mkdir ~/.local/share/atuin/
+atuin init nu --disable-up-arrow | save --force ~/.local/share/atuin/init.nu
+

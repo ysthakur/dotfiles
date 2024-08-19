@@ -106,3 +106,5 @@ eval "$(oh-my-posh init zsh --config $HOME/ysthakur_prompt_theme_light.omp.json)
 # TODO possibly use Zinit's recommended way instead
 eval "$(direnv hook zsh)"
 
+eval "$(atuin init zsh --disable-up-arrow)"
+

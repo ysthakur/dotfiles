@@ -62,6 +62,7 @@
               jujutsu # (jj: Git-compatible version control system)
               vivid # To generate LS_COLORS and stuff
               mosh # ssh replacement
+              atuin # Also exists as flake
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;

@@ -717,5 +717,7 @@ use custom-completions/nix/nix-completions.nu *
 
 source ~/.cache/carapace/init.nu
 
-
 use mise.nu
+
+source ~/.local/share/atuin/init.nu
+
