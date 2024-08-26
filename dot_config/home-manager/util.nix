@@ -21,6 +21,10 @@
               tmux.enableShellIntegration = true;
             };
 
+            emacs = {
+              enable = true;
+            };
+
             neovim = {
               # Only use the config here to install the vim-plug plugin,
               # then use init.vim for the actual config and install the
@@ -63,6 +67,7 @@
               vivid # To generate LS_COLORS and stuff
               mosh # ssh replacement
               atuin # Also exists as flake
+              ripgrep
             ] ++ extraPkgs;
             sessionVariables = {
               HOSTNAME = hostname;
