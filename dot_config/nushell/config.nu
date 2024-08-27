@@ -721,3 +721,5 @@ use mise.nu
 
 source ~/.local/share/atuin/init.nu
 
+alias emacs = emacs -nw --init-directory ~/.config/emacs
+

@@ -1,8 +1,14 @@
-{ pkgs, util, flakePkgs }:
-
-(import ./wsl.nix {
-  inherit pkgs util;
+{
+  pkgs,
+  util,
+  flakePkgs,
+}:
+let
   username = "ysthakur";
-  hostname = "silver-hp2";
-})
-
+in
+{
+  inherit username;
+  modules = [
+    (import ./wsl.nix { inherit pkgs username; })
+  ];
+}

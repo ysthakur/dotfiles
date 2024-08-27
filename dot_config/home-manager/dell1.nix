@@ -1,11 +1,15 @@
-{ pkgs, util, flakePkgs }:
-
-(import ./wsl.nix {
-  inherit pkgs util;
+{
+  pkgs,
+  util,
+  flakePkgs,
+}:
+let
   username = "ysthakur";
-  hostname = "dell1";
-  extraPkgs = with pkgs; [
-    # For CMSC631
-    coq_8_17 # Need Coq 8.17.1
+in
+{
+  inherit username;
+  modules = [
+    (import ./wsl.nix { inherit pkgs username; })
+    (import ./cmsc631.nix { inherit pkgs; })
   ];
-})
+}
