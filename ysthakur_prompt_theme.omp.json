@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palettes": {
-    "template": "{{ if eq .Env.LIGHT_THEME \"false\" }}dark{{ else }}light{{ end }}",
+    "template": "{{ if eq .Env.LIGHT_THEME \"true\" }}light{{ else }}dark{{ end }}",
     "list": {
       "light": {
         "foreground": "#000000"
