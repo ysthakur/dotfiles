@@ -36,23 +36,19 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
+# The Oh My Posh config chooses a palette based on the LIGHT_THEME env var
 # $env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
 $env.LIGHT_THEME = ($env.LIGHT_THEME? | default true | into bool)
-if $env.LIGHT_THEME {
-  oh-my-posh init nu --config ~/ysthakur_prompt_theme_light.omp.json
-} else {
-  oh-my-posh init nu --config ~/my_prompt_theme.omp.json
-}
+oh-my-posh init nu --config ~/ysthakur_prompt_theme_light.omp.json
 
 zoxide init nushell | save -f ~/.zoxide.nu
 
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
-
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force
 
 mkdir ~/.local/share/atuin/
-atuin init nu --disable-up-arrow | save --force ~/.local/share/atuin/init.nu
+atuin init nu | save --force ~/.local/share/atuin/init.nu
 

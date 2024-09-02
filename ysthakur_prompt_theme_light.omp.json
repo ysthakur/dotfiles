@@ -1,5 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palettes": {
+    "template": "{{ if eq .Env.LIGHT_THEME \"false\" }}dark{{ else }}light{{ end }}",
+    "list": {
+      "light": {
+        "foreground": "#000000"
+      },
+      "dark": {
+        "foreground": "#ffffff"
+      }
+    }
+  },
   "blocks": [
     {
       "type": "prompt",
@@ -117,10 +128,10 @@
         {
           "type": "shell",
           "style": "plain",
-          "foreground": "#000000"
+          "foreground": "p:foreground"
         },
         {
-          "foreground": "#000000",
+          "foreground": "p:foreground",
           "style": "plain",
           "template": "\uf054 ",
           "type": "text"
