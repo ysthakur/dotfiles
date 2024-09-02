@@ -39,7 +39,7 @@ $env.NU_PLUGIN_DIRS = [
 # The Oh My Posh config chooses a palette based on the LIGHT_THEME env var
 # $env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
 $env.LIGHT_THEME = ($env.LIGHT_THEME? | default true | into bool)
-oh-my-posh init nu --config ~/ysthakur_prompt_theme_light.omp.json
+oh-my-posh init nu --config ysthakur_prompt_theme.omp.json
 
 zoxide init nushell | save -f ~/.zoxide.nu
 
