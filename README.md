@@ -9,7 +9,7 @@
 
 ## Prompt
 
-Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt. The [configuration file](https://github.com/ysthakur/shared-config/blob/main/ysthakur-prompt-theme.omp.json) is in the [shared-config](https://github.com/ysthakur/shared-config) repo so that the Windows config can also use it. It's listed in .chezmoiexternal.toml.
+Uses [Oh My Posh](https://ohmyposh.dev/) for the prompt. An environment variable `LIGHT_THEME` is set to either true or false, and inside the prompt file, a template chooses a different [palette](https://ohmyposh.dev/docs/configuration/colors#palettes) based on this environment variable.
 
 ## Nix
 
