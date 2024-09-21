@@ -33,7 +33,7 @@ in
             ]
           ))
           # File explorer
-          cinnamon.nemo
+          nemo
           xautolock
           # See names for events like keys
           xorg.xev
