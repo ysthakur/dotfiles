@@ -27,7 +27,7 @@ in
           firefox
           kate
           git
-          (python310.withPackages (
+          (python312.withPackages (
             ps: with ps; [
               # virtualenvwrapper
             ]
@@ -39,8 +39,6 @@ in
           xorg.xev
           # Simulate keypresses
           xdotool
-          # For managing citations
-          # zotero
           # Ghostty beta
           # flakePkgs.ghostty
         ];
