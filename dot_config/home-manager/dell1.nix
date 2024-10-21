@@ -18,6 +18,7 @@ in
         with pkgs;
         [
           typst
+          valgrind-light
         ]
       );
     }

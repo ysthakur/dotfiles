@@ -8,7 +8,7 @@
   home.packages = (
     with pkgs;
     [
-      coq_8_17 # Need Coq 8.17.1 for class
+      coq # Need Coq 8.17.1 for class but whatever
       ripgrep # Needed for Doom Emacs
       coqPackages.vscoq-language-server
     ]

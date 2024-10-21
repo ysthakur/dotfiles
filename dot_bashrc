@@ -44,7 +44,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Colored prompt with oh-my-posh
-eval "$(oh-my-posh init bash --config $HOME/my_prompt_theme.omp.json)"
+eval "$(oh-my-posh init bash --config $HOME/ysthakur_prompt_theme.omp.json)"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

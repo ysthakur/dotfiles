@@ -73,6 +73,7 @@ export LANGUAGE=en_US.UTF-8
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:/home/ysthakur/.local/share/coursier/bin"
 
 export LS_COLORS=$(vivid generate solarized-light)
 
@@ -109,3 +110,4 @@ eval "$(direnv hook zsh)"
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
+[ -f "/home/ysthakur/.ghcup/env" ] && . "/home/ysthakur/.ghcup/env" # ghcup-env
