@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Do NOT use inputs.nixpkgs.follows
-    ghostty.url = "git+ssh://git@github.com/mitchellh/ghostty";
+    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
   };
 
   outputs =
