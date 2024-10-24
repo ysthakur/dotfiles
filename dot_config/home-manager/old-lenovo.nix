@@ -27,18 +27,20 @@ in
           firefox
           kate
           git
-          (python312.withPackages (
+          (python310.withPackages (
             ps: with ps; [
               # virtualenvwrapper
             ]
           ))
           # File explorer
-          nemo
+          cinnamon.nemo
           xautolock
           # See names for events like keys
           xorg.xev
           # Simulate keypresses
           xdotool
+          # For managing citations
+          # zotero
           # Ghostty beta
           # flakePkgs.ghostty
         ];
