@@ -2,7 +2,7 @@
 #
 # version = 0.83.1
 
-use scripts/wsl-util.nu
+use scripts/util.nu *
 
 # Windows uses USERPROFILE instead of HOME
 $env.HOME = $env.HOME? | default $env.USERPROFILE?
@@ -44,12 +44,18 @@ $env.NU_PLUGIN_DIRS = [
 # $env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
 $env.LIGHT_THEME = ($env.LIGHT_THEME? | default true | into bool)
 
-# Update a file if it hasn't been updated in a while
-def update-cached [file: string, dur: duration, gen: closure] {
-  let path = $nu.cache-dir | path join $file
-  if not ($path | path exists) or (date now) - (ls $path).0.modified > $dur {
-    do $gen | save -f $path
-    print $"Updated ($file)"
+# Update a file if it hasn't been updated in a while.
+# If the tool isn't installed, create an empty file so that there won't be
+# problems when sourcing it.
+def update-cached [tool: string, dur: duration, gen: closure] {
+  let path = $nu.cache-dir | path join $"($tool).nu"
+  if (exists-exe $tool) {
+    if not ($path | path exists) or (date now) - (ls $path).0.modified > $dur {
+      do $gen | save -f $path
+      print $"Updated ($tool).nu"
+    }
+  } else {
+    "" | save -f $path
   }
 }
 
