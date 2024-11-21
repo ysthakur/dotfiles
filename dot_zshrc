@@ -111,3 +111,6 @@ eval "$(direnv hook zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 [ -f "/home/ysthakur/.ghcup/env" ] && . "/home/ysthakur/.ghcup/env" # ghcup-env
+
+# opam configuration
+[[ ! -r /home/ysthakur/.opam/opam-init/init.zsh ]] || source /home/ysthakur/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
