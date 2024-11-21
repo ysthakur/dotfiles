@@ -707,19 +707,15 @@ $env.config = {
     ]
 }
 
-source ~/.zoxide.nu
-
-source ~/.oh-my-posh.nu
+source ($nu.cache-dir | path join zoxide.nu)
+source ($nu.cache-dir | path join carapace.nu)
+source ($nu.cache-dir | path join atuin.nu)
+source ($nu.cache-dir | path join oh-my-posh.nu)
+use ($nu.cache-dir | path join mise.nu)
 
 use custom-completions/git/git-completions.nu *
 use custom-completions/cargo/cargo-completions.nu *
 use custom-completions/nix/nix-completions.nu *
-
-source ~/.cache/carapace/init.nu
-
-use mise.nu
-
-source ~/.local/share/atuin/init.nu
 
 alias emacs = emacs -nw --init-directory ~/.config/emacs
 

@@ -2,6 +2,7 @@
 #
 # version = 0.83.1
 
+use scripts/util.nu update-cached
 use scripts/wsl-util.nu
 
 # Windows uses USERPROFILE instead of HOME
@@ -43,16 +44,21 @@ $env.NU_PLUGIN_DIRS = [
 # The Oh My Posh config chooses a palette based on the LIGHT_THEME env var
 # $env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
 $env.LIGHT_THEME = ($env.LIGHT_THEME? | default true | into bool)
-oh-my-posh init nu --config $"($env.HOME)/ysthakur_prompt_theme.omp.json"
 
-zoxide init nushell | save -f ~/.zoxide.nu
+def create-in-cache-dir [ path: string, dur: duration, gen: closure ] {
+  let full = $nu.cache-dir | path join $path
+  if (update-cached $full $dur $gen) {
+    print $"Updated ($full)"
+  }
+}
 
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+mkdir $nu.cache-dir
+create-in-cache-dir oh-my-posh.nu 1wk {
+  oh-my-posh init nu --print --config $"($env.HOME)/ysthakur_prompt_theme.omp.json"
+}
 
-let mise_path = $nu.default-config-dir | path join mise.nu
-^mise activate nu | save $mise_path --force
-
-mkdir ~/.local/share/atuin/
-atuin init nu --disable-up-arrow | save --force ~/.local/share/atuin/init.nu
+create-in-cache-dir zoxide.nu 6wk { zoxide init nushell }
+create-in-cache-dir carapace.nu 4wk { carapace _carapace nushell }
+create-in-cache-dir mise.nu 4wk { ^mise activate nu }
+create-in-cache-dir atuin.nu 4wk { atuin init nu --disable-up-arrow }
 
