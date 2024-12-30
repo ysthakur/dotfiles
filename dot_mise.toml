@@ -1,7 +1,7 @@
-[plugins]
-amm = "https://github.com/ysthakur/asdf-amm.git"
+[alias]
+amm = "asdf:https://github.com/ysthakur/asdf-amm"
 
 [tools]
 amm = "3.2-2.5.9"
-node = "20.11.0"
+node = "23.5.0"
 

@@ -28,8 +28,6 @@
       })
       # File explorer
       xfce.thunar
-      # Website builder
-      hugo
     ];
     sessionVariables = {
       GOBIN = "/home/${username}/go/bin";
