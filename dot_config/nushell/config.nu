@@ -1,12 +1,34 @@
-# Nushell Config File
-#
-# version = 0.83.1
-
-# For more information on defining custom themes, see
-# https://www.nushell.sh/book/coloring_and_theming.html
-# And here is the theme collection
-# https://github.com/nushell/nu_scripts/tree/main/themes
 use std/config *
+
+# Specifies how environment variables are:
+# - converted from a string to a value on Nushell startup (from_string)
+# - converted from a value back to a string when running external commands (to_string)
+# Note: The conversions happen *after* config.nu is loaded
+$env.ENV_CONVERSIONS = $env.ENV_CONVERSIONS | merge {
+  "PATH": {
+    from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
+  }
+  "Path": {
+    from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
+  }
+  "LIGHT_THEME": {
+    from_string: { |s| $s | into bool }
+    to_string: { |b| $b | into string }
+  }
+}
+
+# Directories to search for scripts when calling source or use
+$env.NU_LIB_DIRS = [
+    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    $"($env.HOME)/.nix-profile/share/nu_scripts/"
+]
+
+# Directories to search for plugin binaries when calling register
+$env.NU_PLUGIN_DIRS = [
+    # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+]
 
 # Disable the welcome banner at startup
 $env.config.show_banner = false

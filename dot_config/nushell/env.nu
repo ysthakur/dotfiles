@@ -61,7 +61,7 @@ def update-cached [tool: string, dur: duration, gen: closure] {
 
 mkdir $nu.cache-dir
 update-cached oh-my-posh 1wk {
-  oh-my-posh init nu --print --config $"($env.HOME)/ysthakur_prompt_theme.omp.json"
+  oh-my-posh init nu --print --config "~/ysthakur_prompt_theme.omp.json"
 }
 update-cached zoxide 6wk { zoxide init nushell }
 update-cached carapace 4wk { carapace _carapace nushell }
