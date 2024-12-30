@@ -75,7 +75,7 @@ source ($nu.cache-dir | path join zoxide.nu)
 source ($nu.cache-dir | path join carapace.nu)
 source ($nu.cache-dir | path join atuin.nu)
 source ($nu.cache-dir | path join oh-my-posh.nu)
-use ($nu.cache-dir | path join mise.nu)
+source ($nu.cache-dir | path join mise.nu)
 
 use custom-completions/git/git-completions.nu *
 use custom-completions/cargo/cargo-completions.nu *
