@@ -2,6 +2,6 @@
 amm = "asdf:https://github.com/ysthakur/asdf-amm"
 
 [tools]
-amm = "3.2-2.5.9"
-node = "23.5.0"
+amm = "3.2-2.5.11"
+node = "23.6.0"
 
