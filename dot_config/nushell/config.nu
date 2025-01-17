@@ -65,9 +65,7 @@ $env.config.highlight_resolved_externals = true
 
 $env.config.hooks.pre_prompt = [{
     if (which direnv | is-not-empty) {
-        let direnv = (direnv export json | from json)
-        let direnv = if ($direnv | length) == 1 { $direnv } else { {} }
-        $direnv | load-env
+        direnv export json | from json | default {} | load-env
     }
 }]
 
