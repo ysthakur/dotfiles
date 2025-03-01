@@ -8,7 +8,6 @@
     packages = with pkgs; [
       # GitHub CLI
       gh
-      zellij # Terminal multiplexer (easier to use than tmux)
       # For recording terminal sessions
       asciinema
       (texlive.combine {
