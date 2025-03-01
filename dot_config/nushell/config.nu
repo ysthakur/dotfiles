@@ -20,9 +20,9 @@ $env.ENV_CONVERSIONS = $env.ENV_CONVERSIONS | merge {
 }
 
 # Directories to search for scripts when calling source or use
-$env.NU_LIB_DIRS = [
+const NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
-    $"($env.HOME)/.nix-profile/share/nu_scripts/"
+    "~/.nix-profile/share/nu_scripts/"
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -33,7 +33,8 @@ $env.NU_PLUGIN_DIRS = [
 # Disable the welcome banner at startup
 $env.config.show_banner = false
 
-$env.config.filesize.metric = true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
+# $env.config.filesize.unit = "metric" # metric => KB, MB, GB (ISO standard), binary => KiB, MiB, GiB (Windows standard)
+# $env.config.filesize.metric = true
 
 # Use Helix for editing the buffer
 $env.config.buffer_editor = "hx"
@@ -47,6 +48,7 @@ $env.config.history.isolation = true
 $env.config.table.show_empty = true # show 'empty list' and 'empty record' placeholders for command output
 $env.config.table.header_on_separator = true
 
+$env.config.completions.algorithm = "fuzzy"
 $env.config.completions.external.enable = false # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
 
 $env.config.cursor_shape = {

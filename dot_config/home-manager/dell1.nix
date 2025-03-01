@@ -16,7 +16,8 @@ in
         with pkgs;
         [
           typst
-          valgrind
+          ruff
+          python2
         ]
       );
     }
