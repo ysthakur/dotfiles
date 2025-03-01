@@ -2,8 +2,9 @@ use std/config *
 
 # Directories to search for scripts when calling source or use
 const NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
-    "~/.nix-profile/share/nu_scripts/"
+    ($nu.default-config-dir | path join 'scripts')
+    "~/.nix-profile/share/nu_scripts/" # For WSL (install nu_scripts with Nix)
+    "~/nu_scripts" # For Windows
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -13,9 +14,6 @@ $env.NU_PLUGIN_DIRS = [
 
 # Disable the welcome banner at startup
 $env.config.show_banner = false
-
-# $env.config.filesize.unit = "metric" # metric => KB, MB, GB (ISO standard), binary => KiB, MiB, GiB (Windows standard)
-# $env.config.filesize.metric = true
 
 # Use Helix for editing the buffer
 $env.config.buffer_editor = "hx"
@@ -38,7 +36,7 @@ $env.config.cursor_shape = {
     vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line (underscore is the default)
 }
 
-$env.config.color_config = if $env.LIGHT_THEME { (light-theme) } else { (dark_theme) }
+$env.config.color_config = if $env.LIGHT_THEME { (light-theme) } else { (dark-theme) }
 
 # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 $env.config.render_right_prompt_on_last_line = false
