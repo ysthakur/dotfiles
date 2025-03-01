@@ -25,7 +25,7 @@ in
           # Get type of files
           file
           firefox
-          kate
+          kdePackages.kate
           git
           (python310.withPackages (
             ps: with ps; [
@@ -33,15 +33,12 @@ in
             ]
           ))
           # File explorer
-          cinnamon.nemo
+          nemo
           xautolock
           # See names for events like keys
           xorg.xev
           # Simulate keypresses
           xdotool
-          # For managing citations
-          # zotero
-          # Ghostty beta
           # flakePkgs.ghostty
         ];
         sessionVariables = {
