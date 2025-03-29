@@ -78,7 +78,7 @@
                 # Only use the config here to install the vim-plug plugin,
                 # then use init.vim for the actual config and install the
                 # other plugins there using vim-plug
-                enable = true;
+                enable = false; # DON'T install neovim right now
                 plugins = [ pkgs.vimPlugins.vim-plug ];
                 # Assumes this file is in ~/.config/home-manager and the
                 # Neovim config is in ~/.config/nvim/init.vim
@@ -107,12 +107,10 @@
                 nushell
                 nu_scripts
                 zoxide # cd replacement with extra features
-                eza # ls replacement
                 oh-my-posh # For fancy prompt
                 zellij # Terminal multiplexer (easier to use than tmux)
                 helix # Modal editor
                 carapace # Completer
-                jujutsu # (jj: Git-compatible version control system)
                 vivid # To generate LS_COLORS and stuff
                 mosh # ssh replacement
                 atuin # Also exists as flake

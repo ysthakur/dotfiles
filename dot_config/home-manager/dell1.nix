@@ -17,7 +17,6 @@ in
         [
           typst
           ruff
-          python2
         ]
       );
     }

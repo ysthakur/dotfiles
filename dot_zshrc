@@ -82,8 +82,8 @@ zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
 # Colored output for ls with human readable sizes
-#alias ls="ls --color=auto --classify --human-readable"
-alias ls="exa --classify --header --git --group"
+alias ls="ls --color=auto --classify --human-readable"
+# alias ls="exa --classify --header --git --group"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

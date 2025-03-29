@@ -1,6 +1,7 @@
 [user]
         email = 45539777+ysthakur@users.noreply.github.com
         name = ysthakur
+	signingkey = /home/ysthakur/.ssh/id_ed25519.pub
 [credential "https://github.com"]
         helper = store
 #        helper = !/usr/bin/env gh auth git-credential
@@ -10,3 +11,11 @@
 [pull]
 	rebase = false
 
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/ysthakur/.ssh/allowed_signers
