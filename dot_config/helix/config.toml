@@ -1,4 +1,7 @@
-theme = "spacebones_light"
+#
+# theme = "spacebones_light"
+
+theme = "catppuccin_latte"
 
 [editor]
 true-color = true
