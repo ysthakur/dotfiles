@@ -23,6 +23,12 @@ NixOS configuration is in `~/nixfiles/configuration.nix`.
 
 ### Building Home Manager configuration
 
+Periodically update the flake's lockfile with
+```bash
+nix flake update
+```
+
+Then run this to use the new versions of all the packages:
 ```bash
 home-manager switch
 ```
