@@ -17,3 +17,23 @@ export module wsl {
   }
 }
 
+# Given a POSIX shell script containing aliases, translate those aliases to Nushell
+#
+# Preserves comments and blank lines
+export def gen-aliases [ alias_file: path ] : nothing -> string {
+  open --raw $alias_file | lines | each { |line|
+    # todo the body may contain escaped quotes or whatever, need to unescape that
+    let parsed = $line | parse 'alias {name}="{body}"'
+    if ($parsed | is-not-empty) {
+      $"alias ($parsed.0.name) = ($parsed.0.body)\n"
+    } else if ($line | str starts-with "#") {
+      $"($line)\n"
+    } else if $line == "" {
+      "\n"
+    } else {
+      # If the line isn't an alias, comment, or blank, ignore it
+      ""
+    }
+  } | str join ""
+}
+

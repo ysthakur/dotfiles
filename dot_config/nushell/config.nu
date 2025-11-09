@@ -54,6 +54,7 @@ source ($nu.cache-dir | path join atuin.nu)
 source ($nu.cache-dir | path join oh-my-posh.nu)
 source ($nu.cache-dir | path join mise.nu)
 use ($nu.cache-dir | path join stickyvar.nu) sv
+source ($nu.cache-dir | path join common_aliases.nu)
 
 use custom-completions/git/git-completions.nu *
 use custom-completions/cargo/cargo-completions.nu *

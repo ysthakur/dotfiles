@@ -28,9 +28,14 @@ $env.ENV_CONVERSIONS = {
 # Update a file if it hasn't been updated in a while.
 # If the tool isn't installed, create an empty file so that there won't be
 # problems when sourcing it.
-def update-cached [tool: string, dur: duration, gen: closure] {
+def update-cached [
+  tool: string,
+  dur: duration,
+  gen: closure,
+  --override-exists, # create the file even if the tool doesn't exist
+] {
   let path = $nu.cache-dir | path join $"($tool).nu"
-  if (exists-exe $tool) {
+  if (exists-exe $tool) or $override_exists {
     if not ($path | path exists) or (date now) - (ls $path).0.modified > $dur {
       do $gen | save -f $path
       print $"Updated ($tool).nu"
@@ -49,4 +54,10 @@ update-cached carapace 4wk { carapace _carapace nushell }
 update-cached mise 4wk { ^mise activate nu }
 update-cached atuin 4wk { atuin init nu --disable-up-arrow }
 update-cached stickyvar 4wk { stickyvar init nu }
+
+# Translate POSIX shell aliases to Nushell
+let alias_file = "~/common_aliases"
+update-cached common_aliases 4wk --override-exists=($alias_file | path exists) {
+  gen-aliases ($alias_file | path expand)
+}
 
