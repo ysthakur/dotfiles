@@ -1,16 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "palettes": {
-    "list": {
-      "dark": {
-        "foreground": "#ffffff"
-      },
-      "light": {
-        "foreground": "#000000"
-      }
-    },
-    "template": "{{ if eq .Env.LIGHT_THEME \"true\" }}light{{ else }}dark{{ end }}"
-  },
   "transient_prompt": {
     "template": "{{if .Root}}⚡ {{end}}\uf054 ",
     "foreground": "#FFD700",
@@ -155,7 +144,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "foreground": "p:foreground",
+          "foreground": "default",
           "type": "shell",
           "style": "plain"
         },
@@ -164,7 +153,7 @@
             "cache_duration": "none"
           },
           "template": "\uf054 ",
-          "foreground": "p:foreground",
+          "foreground": "default",
           "type": "text",
           "style": "plain"
         }

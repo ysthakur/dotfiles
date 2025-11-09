@@ -20,18 +20,10 @@ $env.ENV_CONVERSIONS = {
     from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
     to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
   }
-  "LIGHT_THEME": {
-    from_string: { |s| $s | into bool }
-    to_string: { |b| $b | into string }
-  }
 }
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-
-# The Oh My Posh config chooses a palette based on the LIGHT_THEME env var
-# $env.LIGHT_THEME = (wsl-util is-wsl) and (wsl-util is-light-theme)
-$env.LIGHT_THEME = ($env.LIGHT_THEME? | default true | into bool)
 
 # Update a file if it hasn't been updated in a while.
 # If the tool isn't installed, create an empty file so that there won't be
@@ -56,4 +48,5 @@ update-cached zoxide 6wk { zoxide init nushell }
 update-cached carapace 4wk { carapace _carapace nushell }
 update-cached mise 4wk { ^mise activate nu }
 update-cached atuin 4wk { atuin init nu --disable-up-arrow }
+update-cached stickyvar 4wk { stickyvar init nu }
 

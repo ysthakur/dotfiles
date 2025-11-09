@@ -36,8 +36,6 @@ $env.config.cursor_shape = {
     vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line (underscore is the default)
 }
 
-$env.config.color_config = if $env.LIGHT_THEME { (light-theme) } else { (dark-theme) }
-
 # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 $env.config.render_right_prompt_on_last_line = false
 
@@ -55,6 +53,7 @@ source ($nu.cache-dir | path join carapace.nu)
 source ($nu.cache-dir | path join atuin.nu)
 source ($nu.cache-dir | path join oh-my-posh.nu)
 source ($nu.cache-dir | path join mise.nu)
+use ($nu.cache-dir | path join stickyvar.nu) sv
 
 use custom-completions/git/git-completions.nu *
 use custom-completions/cargo/cargo-completions.nu *
