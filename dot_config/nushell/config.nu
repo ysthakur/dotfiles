@@ -15,6 +15,8 @@ $env.NU_PLUGIN_DIRS = [
 # Disable the welcome banner at startup
 $env.config.show_banner = false
 
+$env.config.color_config = (light-theme)
+
 # Use Helix for editing the buffer
 $env.config.buffer_editor = "hx"
 
