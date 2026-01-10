@@ -1,4 +1,4 @@
-[alias]
+[tool_alias]
 amm = "asdf:https://github.com/ysthakur/asdf-amm"
 
 [tools]
